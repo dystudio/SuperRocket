@@ -213,6 +213,7 @@
     <Content Include="bin\x64\Debug\CefSharp.BrowserSubprocess.Core.dll" />
     <Content Include="bin\x64\Debug\CefSharp.BrowserSubprocess.exe" />
     <Content Include="bin\x64\Debug\CefSharp.Core.dll" />
+    <Content Include="Modules\Example\Default.html" />
     <Resource Include="bin\x64\Debug\CefSharp.Core.xml" />
     <Content Include="bin\x64\Debug\CefSharp.dll" />
     <Content Include="bin\x64\Debug\CefSharp.Wpf.dll" />

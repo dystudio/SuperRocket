@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CefSharp;
+using CefSharp.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,16 @@ namespace ClientApp
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            //Perform dependency check to make sure all relevant resources are in our output directory.
+            var settings = new CefSettings();
+            
+            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
+
+            var browser = new ChromiumWebBrowser();
+            browser.Address = "www.baidu.com";
+            
+        }
     }
 }

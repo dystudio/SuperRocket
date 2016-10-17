@@ -54,6 +54,26 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CefSharp">
       <HintPath>..\packages\CefSharp.Common.53.0.0\CefSharp\x64\CefSharp.dll</HintPath>
@@ -115,6 +135,70 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bin\x64\Debug\cef.pak" />
+    <None Include="bin\x64\Debug\cef_100_percent.pak" />
+    <None Include="bin\x64\Debug\cef_200_percent.pak" />
+    <None Include="bin\x64\Debug\cef_extensions.pak" />
+    <None Include="bin\x64\Debug\ClientApp.exe.config" />
+    <None Include="bin\x64\Debug\ClientApp.vshost.exe.config" />
+    <None Include="bin\x64\Debug\debug.log" />
+    <None Include="bin\x64\Debug\devtools_resources.pak" />
+    <None Include="bin\x64\Debug\icudtl.dat" />
+    <None Include="bin\x64\Debug\locales\am.pak" />
+    <None Include="bin\x64\Debug\locales\ar.pak" />
+    <None Include="bin\x64\Debug\locales\bg.pak" />
+    <None Include="bin\x64\Debug\locales\bn.pak" />
+    <None Include="bin\x64\Debug\locales\ca.pak" />
+    <None Include="bin\x64\Debug\locales\cs.pak" />
+    <None Include="bin\x64\Debug\locales\da.pak" />
+    <None Include="bin\x64\Debug\locales\de.pak" />
+    <None Include="bin\x64\Debug\locales\el.pak" />
+    <None Include="bin\x64\Debug\locales\en-GB.pak" />
+    <None Include="bin\x64\Debug\locales\en-US.pak" />
+    <None Include="bin\x64\Debug\locales\es-419.pak" />
+    <None Include="bin\x64\Debug\locales\es.pak" />
+    <None Include="bin\x64\Debug\locales\et.pak" />
+    <None Include="bin\x64\Debug\locales\fa.pak" />
+    <None Include="bin\x64\Debug\locales\fi.pak" />
+    <None Include="bin\x64\Debug\locales\fil.pak" />
+    <None Include="bin\x64\Debug\locales\fr.pak" />
+    <None Include="bin\x64\Debug\locales\gu.pak" />
+    <None Include="bin\x64\Debug\locales\he.pak" />
+    <None Include="bin\x64\Debug\locales\hi.pak" />
+    <None Include="bin\x64\Debug\locales\hr.pak" />
+    <None Include="bin\x64\Debug\locales\hu.pak" />
+    <None Include="bin\x64\Debug\locales\id.pak" />
+    <None Include="bin\x64\Debug\locales\it.pak" />
+    <None Include="bin\x64\Debug\locales\ja.pak" />
+    <None Include="bin\x64\Debug\locales\kn.pak" />
+    <None Include="bin\x64\Debug\locales\ko.pak" />
+    <None Include="bin\x64\Debug\locales\lt.pak" />
+    <None Include="bin\x64\Debug\locales\lv.pak" />
+    <None Include="bin\x64\Debug\locales\ml.pak" />
+    <None Include="bin\x64\Debug\locales\mr.pak" />
+    <None Include="bin\x64\Debug\locales\ms.pak" />
+    <None Include="bin\x64\Debug\locales\nb.pak" />
+    <None Include="bin\x64\Debug\locales\nl.pak" />
+    <None Include="bin\x64\Debug\locales\pl.pak" />
+    <None Include="bin\x64\Debug\locales\pt-BR.pak" />
+    <None Include="bin\x64\Debug\locales\pt-PT.pak" />
+    <None Include="bin\x64\Debug\locales\ro.pak" />
+    <None Include="bin\x64\Debug\locales\ru.pak" />
+    <None Include="bin\x64\Debug\locales\sk.pak" />
+    <None Include="bin\x64\Debug\locales\sl.pak" />
+    <None Include="bin\x64\Debug\locales\sr.pak" />
+    <None Include="bin\x64\Debug\locales\sv.pak" />
+    <None Include="bin\x64\Debug\locales\sw.pak" />
+    <None Include="bin\x64\Debug\locales\ta.pak" />
+    <None Include="bin\x64\Debug\locales\te.pak" />
+    <None Include="bin\x64\Debug\locales\th.pak" />
+    <None Include="bin\x64\Debug\locales\tr.pak" />
+    <None Include="bin\x64\Debug\locales\uk.pak" />
+    <None Include="bin\x64\Debug\locales\vi.pak" />
+    <None Include="bin\x64\Debug\locales\zh-CN.pak" />
+    <None Include="bin\x64\Debug\locales\zh-TW.pak" />
+    <None Include="bin\x64\Debug\natives_blob.bin" />
+    <None Include="bin\x64\Debug\snapshot_blob.bin" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,7 +209,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\x64\Debug\CefSharp.BrowserSubprocess.Core.dll" />
+    <Content Include="bin\x64\Debug\CefSharp.BrowserSubprocess.exe" />
+    <Content Include="bin\x64\Debug\CefSharp.Core.dll" />
+    <Resource Include="bin\x64\Debug\CefSharp.Core.xml" />
+    <Content Include="bin\x64\Debug\CefSharp.dll" />
+    <Content Include="bin\x64\Debug\CefSharp.Wpf.dll" />
+    <Resource Include="bin\x64\Debug\CefSharp.Wpf.xml" />
+    <Resource Include="bin\x64\Debug\CefSharp.xml" />
+    <Content Include="bin\x64\Debug\ClientApp.exe" />
+    <Content Include="bin\x64\Debug\ClientApp.pdb" />
+    <Content Include="bin\x64\Debug\ClientApp.vshost.exe" />
+    <Content Include="bin\x64\Debug\d3dcompiler_43.dll" />
+    <Content Include="bin\x64\Debug\d3dcompiler_47.dll" />
+    <Content Include="bin\x64\Debug\libcef.dll" />
+    <Content Include="bin\x64\Debug\libEGL.dll" />
+    <Content Include="bin\x64\Debug\libGLESv2.dll" />
+    <Content Include="bin\x64\Debug\Microsoft.VisualStudio.HostingProcess.Utilities.dll" />
+    <Content Include="bin\x64\Debug\Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll" />
+    <Content Include="bin\x64\Debug\widevinecdmadapter.dll" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Modules\readme.txt" />
   </ItemGroup>

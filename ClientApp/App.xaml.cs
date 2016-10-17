@@ -21,9 +21,6 @@ namespace ClientApp
             var settings = new CefSettings();
             
             Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
-
-            var browser = new ChromiumWebBrowser();
-            browser.Address = "www.baidu.com";
             
         }
     }

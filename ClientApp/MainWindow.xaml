@@ -7,14 +7,12 @@
         xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" WindowState="Maximized">
-    <Grid>
+    <Grid x:Name="container">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <wpf:ChromiumWebBrowser Grid.Row="0"
-                          x:Name="Browser"
-                          Address="http://www.baidu.com" />
+
         <StatusBar Grid.Row="1">
             <ProgressBar HorizontalAlignment="Right"
                          IsIndeterminate="{Binding WebBrowser.IsLoading}"

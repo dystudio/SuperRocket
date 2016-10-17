@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CefSharp;
+using CefSharp.Wpf;
 
 namespace ClientApp
 {
@@ -23,6 +25,15 @@ namespace ClientApp
         public MainWindow()
         {
             InitializeComponent();
+
+            InitializeBrowser();
+        }
+
+        private void InitializeBrowser()
+        {
+            var browser = new ChromiumWebBrowser();
+            browser.Address = "www.baidu.com";
+            container.Children.Insert(0, browser);
         }
     }
 }

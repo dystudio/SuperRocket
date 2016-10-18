@@ -24,7 +24,8 @@ namespace ClientApp
     public partial class MainWindow : Window
     {
         //Modules/ModuleName/Default.html
-        const string defaultUrl = "ids://Modules/Example/Default.html";
+        const string defaultUrl = "ids://Modules/{0}/Default.html";
+        private string homePageUrl = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
@@ -36,19 +37,18 @@ namespace ClientApp
         {
             var browser = new ChromiumWebBrowser();
 
-
-
-
             var handler = browser.ResourceHandlerFactory as DefaultResourceHandlerFactory;
             if (handler != null)
             {
-                var path = System.AppDomain.CurrentDomain.BaseDirectory + @"Modules/Example/Default.html";
+                var moduleName = "Example";//It will be got from the menu click event with module name passed
+                homePageUrl = string.Format(defaultUrl, moduleName);
+                var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules/{0}/Default.html",moduleName);//The path for the home page of the module
                 StreamReader reader = new StreamReader(path, System.Text.Encoding.GetEncoding("utf-8"));
                 var responseBody = reader.ReadToEnd().ToString();
                 reader.Close();
                 var response = ResourceHandler.FromString(responseBody);
                 //response.Headers.Add("HeaderTest1", "HeaderTest1Value");
-                handler.RegisterHandler(defaultUrl, response);
+                handler.RegisterHandler(homePageUrl, response);
             }
 
             browser.LoadError += (sender, args) =>
@@ -77,7 +77,7 @@ namespace ClientApp
                 args.Frame.LoadStringForUrl(errorBody, args.FailedUrl);
             };
 
-            browser.Address = defaultUrl;
+            browser.Address = homePageUrl;
             container.Children.Insert(0, browser);
         }
     }

@@ -201,6 +201,12 @@
     <None Include="bin\x64\Debug\locales\zh-TW.pak" />
     <None Include="bin\x64\Debug\natives_blob.bin" />
     <None Include="bin\x64\Debug\snapshot_blob.bin" />
+    <None Include="Modules\Example\fonts\fontawesome-webfont.eot" />
+    <Resource Include="Modules\Example\fonts\fontawesome-webfont.ttf" />
+    <None Include="Modules\Example\fonts\fontawesome-webfont.woff" />
+    <None Include="Modules\Example\fonts\fontawesome-webfont.woff2" />
+    <Resource Include="Modules\Example\fonts\FontAwesome.otf" />
+    <None Include="Modules\Example\js\.DS_Store" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -215,9 +221,43 @@
     <Content Include="bin\x64\Debug\CefSharp.BrowserSubprocess.Core.dll" />
     <Content Include="bin\x64\Debug\CefSharp.BrowserSubprocess.exe" />
     <Content Include="bin\x64\Debug\CefSharp.Core.dll" />
-    <Content Include="Modules\Example\Default.html">
+    <Content Include="Modules\Example\css\animate.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Modules\Example\css\bootstrap.min.css" />
+    <Content Include="Modules\Example\css\component.css" />
+    <Content Include="Modules\Example\css\font-awesome.min.css" />
+    <Content Include="Modules\Example\css\owl.carousel.css" />
+    <Content Include="Modules\Example\css\owl.theme.css" />
+    <Content Include="Modules\Example\css\style.css" />
+    <Content Include="Modules\Example\css\vegas.min.css" />
+    <Content Include="Modules\Example\Default.html" />
+    <Content Include="Modules\Example\fonts\fontawesome-webfont.svg" />
+    <Resource Include="Modules\Example\images\about-img.jpg" />
+    <Resource Include="Modules\Example\images\gallery-img1.jpg" />
+    <Resource Include="Modules\Example\images\gallery-img2.jpg" />
+    <Resource Include="Modules\Example\images\gallery-img3.jpg" />
+    <Resource Include="Modules\Example\images\gallery-img4.jpg" />
+    <Resource Include="Modules\Example\images\slide-img1.jpg" />
+    <Resource Include="Modules\Example\images\slide-img2.jpg" />
+    <Resource Include="Modules\Example\images\slide-img3.jpg" />
+    <Resource Include="Modules\Example\images\team-img1.jpg" />
+    <Resource Include="Modules\Example\images\team-img2.jpg" />
+    <Resource Include="Modules\Example\images\team-img3.jpg" />
+    <Resource Include="Modules\Example\images\team-img4.jpg" />
+    <Resource Include="Modules\Example\images\team-img5.jpg" />
+    <Resource Include="Modules\Example\images\team-img6.jpg" />
+    <Resource Include="Modules\Example\images\team-img7.jpg" />
+    <Resource Include="Modules\Example\images\team-img8.jpg" />
+    <Content Include="Modules\Example\js\bootstrap.min.js" />
+    <Content Include="Modules\Example\js\custom.js" />
+    <Content Include="Modules\Example\js\jquery.js" />
+    <Content Include="Modules\Example\js\modernizr.custom.js" />
+    <Content Include="Modules\Example\js\owl.carousel.min.js" />
+    <Content Include="Modules\Example\js\smoothscroll.js" />
+    <Content Include="Modules\Example\js\toucheffects.js" />
+    <Content Include="Modules\Example\js\vegas.min.js" />
+    <Content Include="Modules\Example\js\wow.min.js" />
     <Resource Include="bin\x64\Debug\CefSharp.Core.xml" />
     <Content Include="bin\x64\Debug\CefSharp.dll" />
     <Content Include="bin\x64\Debug\CefSharp.Wpf.dll" />
@@ -238,7 +278,11 @@
   <ItemGroup>
     <Resource Include="Modules\readme.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y $(ProjectDir)Modules $(TargetDir)Modules\</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

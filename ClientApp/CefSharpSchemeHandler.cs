@@ -44,6 +44,8 @@ namespace CefSharp.Example
                 { "/Example/js/toucheffects.js", Resources.toucheffects },
                 { "/Example/js/vegas.min.js", Resources.vegas_min },
                 { "/Example/js/wow.min.js", Resources.wow_min }
+
+
             };
         }
 
@@ -54,6 +56,7 @@ namespace CefSharp.Example
             var fileName = uri.AbsolutePath;
 
             string resource;
+            var fileExtension = Path.GetExtension(fileName);
             if (ResourceDictionary.TryGetValue(fileName, out resource) && !string.IsNullOrEmpty(resource))
             {
                 Task.Run(() =>
@@ -63,7 +66,7 @@ namespace CefSharp.Example
                         var bytes = Encoding.UTF8.GetBytes(resource);
                         stream = new MemoryStream(bytes);
 
-                        var fileExtension = Path.GetExtension(fileName);
+                        //var fileExtension = Path.GetExtension(fileName);
                         mimeType = ResourceHandler.GetMimeType(fileExtension);
 
                         callback.Continue();
@@ -72,20 +75,41 @@ namespace CefSharp.Example
 
                 return true;
             }
+            
+
+            if (fileExtension == ".jpg")
+            {
+                Task.Run(() =>
+                {
+                    using (callback)
+                    {
+                        var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules/{0}", fileName);//The path for the home page of the module
+                        FileStream fs = File.OpenRead(path);
+                        int filelength = 0;
+                        filelength = (int)fs.Length;
+                        Byte[] bytes = new Byte[filelength];
+                        fs.Read(bytes, 0, filelength);
+
+                        stream = new MemoryStream(bytes);
+
+                        mimeType = ResourceHandler.GetMimeType(fileExtension);
+                        callback.Continue();
+                    }
+                });
+                return true;
+            }
             else
             {
                 callback.Dispose();
             }
-
-
             //if (!string.IsNullOrEmpty(fileName))
             //{
             //    var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules/{0}", fileName);//The path for the home page of the module
-                
+
             //    //Read local file to send to client
             //    Task.Run(() =>
             //    {
-                   
+
             //            StreamReader reader = new StreamReader(path, System.Text.Encoding.GetEncoding("utf-8"));
             //            var responseBody = reader.ReadToEnd().ToString();
 
@@ -94,7 +118,7 @@ namespace CefSharp.Example
 
             //            var fileExtension = Path.GetExtension(fileName);
             //            mimeType = ResourceHandler.GetMimeType(fileExtension);
-                    
+
             //    });
 
             //    return true;

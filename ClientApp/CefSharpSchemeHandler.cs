@@ -122,6 +122,29 @@ namespace CefSharp.Example
                 callback.Dispose();
             }
 
+
+            //if (!string.IsNullOrEmpty(fileName))
+            //{
+            //    var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules/{0}", fileName);//The path for the home page of the module
+                
+            //    //Read local file to send to client
+            //    Task.Run(() =>
+            //    {
+                   
+            //            StreamReader reader = new StreamReader(path, System.Text.Encoding.GetEncoding("utf-8"));
+            //            var responseBody = reader.ReadToEnd().ToString();
+
+            //            var bytes = Encoding.UTF8.GetBytes(responseBody);
+            //            stream = new MemoryStream(bytes);
+
+            //            var fileExtension = Path.GetExtension(fileName);
+            //            mimeType = ResourceHandler.GetMimeType(fileExtension);
+                    
+            //    });
+
+            //    return true;
+            //}
+
             return false;
         }
         

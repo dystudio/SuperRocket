@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using CefSharp;
 using CefSharp.Wpf;
 using System.IO;
+using CefSharp.Example;
 
 namespace ClientApp
 {
@@ -76,7 +77,7 @@ namespace ClientApp
 
                 args.Frame.LoadStringForUrl(errorBody, args.FailedUrl);
             };
-
+            browser.RequestHandler = new RequestHandler();
             browser.Address = homePageUrl;
             container.Children.Insert(0, browser);
         }

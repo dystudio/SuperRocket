@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClientApp.Properties
-{
-
-
+namespace ClientApp.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,49 +22,643 @@ namespace ClientApp.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ClientApp.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap about_img {
+            get {
+                object obj = ResourceManager.GetObject("about_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @charset &quot;UTF-8&quot;;/*!
+        ///Animate.css - http://daneden.me/animate
+        ///Licensed under the MIT license
+        ///
+        ///Copyright (c) 2013 Daniel Eden
+        ///
+        ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished t [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string animate_min {
+            get {
+                return ResourceManager.GetString("animate_min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*!
+        /// * Bootstrap v3.3.6 (http://getbootstrap.com)
+        /// * Copyright 2011-2015 Twitter, Inc.
+        /// * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+        /// *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:b [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string bootstrap_min {
+            get {
+                return ResourceManager.GetString("bootstrap_min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*!
+        /// * Bootstrap v3.3.6 (http://getbootstrap.com)
+        /// * Copyright 2011-2015 Twitter, Inc.
+        /// * Licensed under the MIT license
+        /// */
+        ///if(&quot;undefined&quot;==typeof jQuery)throw new Error(&quot;Bootstrap&apos;s JavaScript requires jQuery&quot;);+function(a){&quot;use strict&quot;;var b=a.fn.jquery.split(&quot; &quot;)[0].split(&quot;.&quot;);if(b[0]&lt;2&amp;&amp;b[1]&lt;9||1==b[0]&amp;&amp;9==b[1]&amp;&amp;b[2]&lt;1||b[0]&gt;2)throw new Error(&quot;Bootstrap&apos;s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3&quot;)}(jQuery),+function(a){&quot;use strict&quot;;function b(){var a=document.createE [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string bootstrap_min1 {
+            get {
+                return ResourceManager.GetString("bootstrap_min1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .grid {
+        ///	margin: 0 auto;
+        ///	list-style: none;
+        ///	text-align: center;
+        ///}
+        ///
+        ///.grid li {
+        ///	display: inline-block;
+        ///	margin: 0;
+        ///	padding: 20px;
+        ///	text-align: left;
+        ///	position: relative;
+        ///}
+        ///
+        ///.grid figure {
+        ///	margin: 0;
+        ///	position: relative;
+        ///}
+        ///
+        ///.grid figure img {
+        ///	width: 100%;
+        ///	max-width: 100%;
+        ///	display: block;
+        ///	position: relative;
+        ///}
+        ///
+        ///.grid figcaption {
+        ///	position: absolute;
+        ///	top: 0;
+        ///	left: 0;
+        ///	padding: 42px 22px;
+        ///	background: #304352;
+        ///	color: #ed4e6e;
+        ///}
+        ///
+        ///.grid figcaption h1 {
+        ///	font-size: 1.6rem;
+        ///	line-height: 2.2rem;
+        ///	margin:  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string component {
+            get {
+                return ResourceManager.GetString("component", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        /// /* jQuery Pre loader
+        ///  -----------------------------------------------*/
+        ///$(window).load(function(){
+        ///    $(&apos;.preloader&apos;).fadeOut(1000); // set duration in brackets    
+        ///});
+        ///
+        ///
+        ///$(document).ready(function() {
+        ///
+        ///  /* Hide mobile menu after clicking on a link
+        ///    -----------------------------------------------*/
+        ///    $(&apos;.navbar-collapse a&apos;).click(function(){
+        ///        $(&quot;.navbar-collapse&quot;).collapse(&apos;hide&apos;);
+        ///    });
+        ///
+        ///
+        ///  /* Smoothscroll js
+        ///  -----------------------------------------------*/
+        ///    $(function() {
+        ///         [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string custom {
+            get {
+                return ResourceManager.GetString("custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///
+        ///	&lt;meta charset=&quot;utf-8&quot;&gt;
+        ///	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;
+        ///	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///	&lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;
+        ///	&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+        ///
+        ///	&lt;title&gt;Snapshot HTML CSS Web Template&lt;/title&gt;
+        ///
+        ///	&lt;link rel=&quot;stylesheet&quot; href=&quot;Example/css/bootstrap.min.css&quot;&gt;
+        ///	&lt;link rel=&quot;stylesheet&quot; href=&quot;Example/css/animate.min.css&quot;&gt;
+        ///	&lt;link rel=&quot;stylesheet&quot; href=&quot;Example/css/font-awesome.min.css&quot;&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Default {
+            get {
+                return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*!
+        /// *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+        /// *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+        /// */@font-face{font-family:&apos;FontAwesome&apos;;src:url(&apos;../fonts/fontawesome-webfont.eot?v=4.5.0&apos;);src:url(&apos;../fonts/fontawesome-webfont.eot?#iefix&amp;v=4.5.0&apos;) format(&apos;embedded-opentype&apos;),url(&apos;../fonts/fontawesome-webfont.woff2?v=4.5.0&apos;) format(&apos;woff2&apos;),url(&apos;../fonts/fontawesome-webfont.woff?v=4.5.0&apos;) format(&apos;woff&apos;),url(&apos;../fonts/fontawesome-webfont.ttf?v=4 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string font_awesome_min {
+            get {
+                return ResourceManager.GetString("font_awesome_min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] FontAwesome {
+            get {
+                object obj = ResourceManager.GetObject("FontAwesome", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fontawesome_webfont {
+            get {
+                object obj = ResourceManager.GetObject("fontawesome_webfont", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fontawesome_webfont1 {
+            get {
+                object obj = ResourceManager.GetObject("fontawesome_webfont1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fontawesome_webfont2 {
+            get {
+                object obj = ResourceManager.GetObject("fontawesome_webfont2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fontawesome_webfont3 {
+            get {
+                object obj = ResourceManager.GetObject("fontawesome_webfont3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fontawesome_webfont4 {
+            get {
+                object obj = ResourceManager.GetObject("fontawesome_webfont4", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_img1 {
+            get {
+                object obj = ResourceManager.GetObject("gallery_img1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_img2 {
+            get {
+                object obj = ResourceManager.GetObject("gallery_img2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_img3 {
+            get {
+                object obj = ResourceManager.GetObject("gallery_img3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_img4 {
+            get {
+                object obj = ResourceManager.GetObject("gallery_img4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*! jQuery v1.11.1 | (c) 2005, 2014 jQuery Foundation, Inc. | jquery.org/license */
+        ///!function(a,b){&quot;object&quot;==typeof module&amp;&amp;&quot;object&quot;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&quot;jQuery requires a window with a document&quot;);return b(a)}:b(a)}(&quot;undefined&quot;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=&quot;1.11.1&quot;,m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string jquery {
+            get {
+                return ResourceManager.GetString("jquery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /* Modernizr 2.6.2 (Custom Build) | MIT &amp; BSD
+        /// * Build: http://modernizr.com/download/#-touch-shiv-cssclasses-teststyles-prefixes-load
+        /// */
+        ///;window.Modernizr=function(a,b,c){function w(a){j.cssText=a}function x(a,b){return w(m.join(a+&quot;;&quot;)+(b||&quot;&quot;))}function y(a,b){return typeof a===b}function z(a,b){return!!~(&quot;&quot;+a).indexOf(b)}function A(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:y(f,&quot;function&quot;)?f.bind(d||b):f}return!1}var d=&quot;2.6.2&quot;,e={},f=!0,g=b.documentElement,h=&quot;modernizr&quot;,i=b.createEl [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string modernizr_custom {
+            get {
+                return ResourceManager.GetString("modernizr_custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /* 
+        /// * 	Core Owl Carousel CSS File
+        /// *	v1.3.3
+        /// */
+        ///
+        ////* clearfix */
+        ///.owl-carousel .owl-wrapper:after {
+        ///	content: &quot;.&quot;;
+        ///	display: block;
+        ///	clear: both;
+        ///	visibility: hidden;
+        ///	line-height: 0;
+        ///	height: 0;
+        ///}
+        ////* display none until init */
+        ///.owl-carousel{
+        ///	display: none;
+        ///	position: relative;
+        ///	width: 100%;
+        ///	-ms-touch-action: pan-y;
+        ///}
+        ///.owl-carousel .owl-wrapper{
+        ///	display: none;
+        ///	position: relative;
+        ///	-webkit-transform: translate3d(0px, 0px, 0px);
+        ///}
+        ///.owl-carousel .owl-wrapper-outer{
+        ///	overflow: hidden;
+        ///	position: relative;
+        ///	 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string owl_carousel {
+            get {
+                return ResourceManager.GetString("owl_carousel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;function&quot;!==typeof Object.create&amp;&amp;(Object.create=function(f){function g(){}g.prototype=f;return new g});
+        ///(function(f,g,k){var l={init:function(a,b){this.$elem=f(b);this.options=f.extend({},f.fn.owlCarousel.options,this.$elem.data(),a);this.userOptions=a;this.loadContent()},loadContent:function(){function a(a){var d,e=&quot;&quot;;if(&quot;function&quot;===typeof b.options.jsonSuccess)b.options.jsonSuccess.apply(this,[a]);else{for(d in a.owl)a.owl.hasOwnProperty(d)&amp;&amp;(e+=a.owl[d].item);b.$elem.html(e)}b.logIn()}var b=this,e;&quot;fu [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string owl_carousel_min {
+            get {
+                return ResourceManager.GetString("owl_carousel_min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*
+        ///* 	Owl Carousel Owl Demo Theme 
+        ///*	v1.3.3
+        ///*/
+        ///
+        ///.owl-theme .owl-controls{
+        ///	margin-top: 10px;
+        ///	text-align: center;
+        ///}
+        ///
+        ////* Styling Next and Prev buttons */
+        ///
+        ///.owl-theme .owl-controls .owl-buttons div{
+        ///	color: #FFF;
+        ///	display: inline-block;
+        ///	zoom: 1;
+        ///	*display: inline;/*IE7 life-saver */
+        ///	margin: 5px;
+        ///	padding: 3px 10px;
+        ///	font-size: 12px;
+        ///	-webkit-border-radius: 30px;
+        ///	-moz-border-radius: 30px;
+        ///	border-radius: 30px;
+        ///	border: 2px solid #999;
+        ///	filter: Alpha(Opacity=50);/*IE7 fix*/
+        ///	opacity: 0.5;
+        ///}
+        ////* Clickable clas [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string owl_theme {
+            get {
+                return ResourceManager.GetString("owl_theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap slide_img1 {
+            get {
+                object obj = ResourceManager.GetObject("slide_img1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap slide_img2 {
+            get {
+                object obj = ResourceManager.GetObject("slide_img2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap slide_img3 {
+            get {
+                object obj = ResourceManager.GetObject("slide_img3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /**
+        /// * SmoothScroll
+        /// * This helper script created by DWUser.com.  Copyright 2013 DWUser.com.  
+        /// * Dual-licensed under the GPL and MIT licenses.  
+        /// * All individual scripts remain property of their copyrighters.
+        /// * Date: 10-Sep-2013
+        /// * Version: 1.0.1
+        /// */
+        ///if (!window[&apos;jQuery&apos;]) alert(&apos;The jQuery library must be included before the smoothscroll.js file.  The plugin will not work propery.&apos;);
+        ///
+        ////**
+        /// * jQuery.ScrollTo - Easy element scrolling using jQuery.
+        /// * Copyright (c) 2007-2013 Ariel Flesler - aflesler(at)gma [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string smoothscroll {
+            get {
+                return ResourceManager.GetString("smoothscroll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///
+        ///
+        ////* Body 
+        ///------------------------------------- */
+        ///body {
+        ///    background: #ffffff;   
+        ///    font-family: &apos;Source Sans Pro&apos;, sans-serif;
+        ///    font-style: normal;
+        ///    font-weight: 300;
+        ///    position: relative;
+        ///}
+        ///
+        ///html,body {
+        ///  width: 100%;
+        ///  overflow-x: hidden;
+        ///}
+        ///
+        ///html {
+        ///  font-size: 100%;
+        ///}
+        ///
+        ///
+        ////*---------------------------------------
+        ///    Typorgraphy              
+        ///-----------------------------------------*/
+        ///
+        ///h1,h2,h3,h4 {
+        ///  font-weight: 300;
+        ///}
+        ///
+        ///h1 {
+        ///  font-size: 2rem;
+        ///  line-hei [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string style {
+            get {
+                return ResourceManager.GetString("style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img1 {
+            get {
+                object obj = ResourceManager.GetObject("team_img1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img2 {
+            get {
+                object obj = ResourceManager.GetObject("team_img2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img3 {
+            get {
+                object obj = ResourceManager.GetObject("team_img3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img4 {
+            get {
+                object obj = ResourceManager.GetObject("team_img4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img5 {
+            get {
+                object obj = ResourceManager.GetObject("team_img5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img6 {
+            get {
+                object obj = ResourceManager.GetObject("team_img6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img7 {
+            get {
+                object obj = ResourceManager.GetObject("team_img7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap team_img8 {
+            get {
+                object obj = ResourceManager.GetObject("team_img8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /** Used Only For Touch Devices **/
+        ///( function( window ) {
+        ///	
+        ///	// for touch devices: add class cs-hover to the figures when touching the items
+        ///	if( Modernizr.touch ) {
+        ///
+        ///		// classie.js https://github.com/desandro/classie/blob/master/classie.js
+        ///		// class helper functions from bonzo https://github.com/ded/bonzo
+        ///
+        ///		function classReg( className ) {
+        ///			return new RegExp(&quot;(^|\\s+)&quot; + className + &quot;(\\s+|$)&quot;);
+        ///		}
+        ///
+        ///		// classList support for class management
+        ///		// altho to be fair, the api sucks because it won&apos;t acc [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string toucheffects {
+            get {
+                return ResourceManager.GetString("toucheffects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .vegas-overlay,.vegas-slide,.vegas-slide-inner,.vegas-timer,.vegas-wrapper{position:absolute;top:0;left:0;bottom:0;right:0;overflow:hidden;border:none;padding:0;margin:0}.vegas-overlay{opacity:.5;background:url(overlays/02.png) center center}.vegas-timer{top:auto;bottom:0;height:2px}.vegas-timer-progress{width:0;height:100%;background:#fff;-webkit-transition:width ease-out;transition:width ease-out}.vegas-timer-running .vegas-timer-progress{width:100%}.vegas-slide,.vegas-slide-inner{margin:0;padding:0;backg [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string vegas_min {
+            get {
+                return ResourceManager.GetString("vegas_min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*!-----------------------------------------------------------------------------
+        /// * Vegas - Fullscreen Backgrounds and Slideshows.
+        /// * v2.2.1 - built 2016-05-04
+        /// * Licensed under the MIT License.
+        /// * http://vegas.jaysalvat.com/
+        /// * ----------------------------------------------------------------------------
+        /// * Copyright (C) 2010-2016 Jay Salvat
+        /// * http://jaysalvat.com/
+        /// * --------------------------------------------------------------------------*/
+        ///!function(t){&quot;use strict&quot;;var s={slide:0,delay:5e3,preload:!1,p [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string vegas_min1 {
+            get {
+                return ResourceManager.GetString("vegas_min1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*! WOW - v1.0.2 - 2014-10-28
+        ///* Copyright (c) 2014 Matthieu Aussaguel; Licensed MIT */(function(){var a,b,c,d,e,f=function(a,b){return function(){return a.apply(b,arguments)}},g=[].indexOf||function(a){for(var b=0,c=this.length;c&gt;b;b++)if(b in this&amp;&amp;this[b]===a)return b;return-1};b=function(){function a(){}return a.prototype.extend=function(a,b){var c,d;for(c in b)d=b[c],null==a[c]&amp;&amp;(a[c]=d);return a},a.prototype.isMobile=function(a){return/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.tes [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string wow_min {
+            get {
+                return ResourceManager.GetString("wow_min", resourceCulture);
             }
         }
     }

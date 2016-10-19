@@ -16,6 +16,7 @@ using CefSharp;
 using CefSharp.Wpf;
 using System.IO;
 using CefSharp.Example;
+using CefSharp.Wpf.Example.Handlers;
 
 namespace ClientApp
 {
@@ -37,6 +38,12 @@ namespace ClientApp
         private void InitializeBrowser()
         {
             var browser = new ChromiumWebBrowser();
+
+            //BrowserSettings browserSettings = new BrowserSettings();
+            ////browserSettings.
+            //browser.BrowserSettings = browserSettings;
+
+            
 
             var handler = browser.ResourceHandlerFactory as DefaultResourceHandlerFactory;
             if (handler != null)
@@ -78,7 +85,9 @@ namespace ClientApp
                 args.Frame.LoadStringForUrl(errorBody, args.FailedUrl);
             };
             browser.RequestHandler = new RequestHandler();
+            browser.MenuHandler = new MenuHandler();
             browser.Address = homePageUrl;
+
             container.Children.Insert(0, browser);
         }
     }

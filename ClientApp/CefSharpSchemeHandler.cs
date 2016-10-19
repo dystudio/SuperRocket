@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using ClientApp.Properties;
 
 namespace CefSharp.Example
 {
@@ -23,31 +24,26 @@ namespace CefSharp.Example
         {
             ResourceDictionary = new Dictionary<string, string>
             {
-                //{ "/home.html", Resources.home_html },
+                { "/Example/Default.html", Resources.Default },
 
-                //{ "/assets/css/shCore.css", Resources.assets_css_shCore_css },
-                //{ "/assets/css/shCoreDefault.css", Resources.assets_css_shCoreDefault_css },
-                //{ "/assets/css/docs.css", Resources.assets_css_docs_css },
-                //{ "/assets/js/application.js", Resources.assets_js_application_js },
-                //{ "/assets/js/jquery.js", Resources.assets_js_jquery_js },
-                //{ "/assets/js/shBrushCSharp.js", Resources.assets_js_shBrushCSharp_js },
-                //{ "/assets/js/shBrushJScript.js", Resources.assets_js_shBrushJScript_js },
-                //{ "/assets/js/shCore.js", Resources.assets_js_shCore_js },
+                { "/Example/css/animate.min.css", Resources.animate_min },
+                { "/Example/css/bootstrap.min.css", Resources.animate_min },
+                { "/Example/css/component.css", Resources.component },
+                { "/Example/css/font-awesome.min.css", Resources.font_awesome_min },
+                { "/Example/css/owl.carousel.css", Resources.owl_carousel },
+                { "/Example/css/owl.theme.css", Resources.owl_theme },
+                { "/Example/css/style.css", Resources.style },
+                { "/Example/css/vegas.min.css", Resources.vegas_min },
 
-                //{ "/bootstrap/bootstrap-theme.min.css", Resources.bootstrap_theme_min_css },
-                //{ "/bootstrap/bootstrap.min.css", Resources.bootstrap_min_css },
-                //{ "/bootstrap/bootstrap.min.js", Resources.bootstrap_min_js },
-
-                //{ "/BindingTest.html", Resources.BindingTest },
-                //{ "/ExceptionTest.html", Resources.ExceptionTest },
-                //{ "/PopupTest.html", Resources.PopupTest },
-                //{ "/SchemeTest.html", Resources.SchemeTest },
-                //{ "/TooltipTest.html", Resources.TooltipTest },
-                //{ "/FramedWebGLTest.html", Resources.FramedWebGLTest },
-                //{ "/MultiBindingTest.html", Resources.MultiBindingTest },
-                //{ "/ScriptedMethodsTest.html", Resources.ScriptedMethodsTest },
-                //{ "/ResponseFilterTest.html", Resources.ResponseFilterTest },
-                //{ "/DraggableRegionTest.html", Resources.DraggableRegionTest }
+                { "/Example/js/bootstrap.min.js", Resources.bootstrap_min },
+                { "/Example/js/custom.js", Resources.custom },
+                { "/Example/js/jquery.js", Resources.jquery },
+                { "/Example/js/modernizr.custom.js", Resources.modernizr_custom },
+                { "/Example/js/owl.carousel.min.js", Resources.owl_carousel_min },
+                { "/Example/js/smoothscroll.js", Resources.smoothscroll },
+                { "/Example/js/toucheffects.js", Resources.toucheffects },
+                { "/Example/js/vegas.min.js", Resources.vegas_min },
+                { "/Example/js/wow.min.js", Resources.wow_min }
             };
         }
 
@@ -56,47 +52,6 @@ namespace CefSharp.Example
             // The 'host' portion is entirely ignored by this scheme handler.
             var uri = new Uri(request.Url);
             var fileName = uri.AbsolutePath;
-
-            if (string.Equals(fileName, "/PostDataTest.html", StringComparison.OrdinalIgnoreCase))
-            {
-                var postDataElement = request.PostData.Elements.FirstOrDefault();
-                var resourceHandler = ResourceHandler.FromString("Post Data: " + (postDataElement == null ? "null" : postDataElement.GetBody()));
-                stream = (MemoryStream)resourceHandler.Stream;
-                mimeType = "text/html";
-                callback.Continue();
-                return true;
-            }
-
-            if (string.Equals(fileName, "/PostDataAjaxTest.html", StringComparison.OrdinalIgnoreCase))
-            {
-                var postData = request.PostData;
-                if (postData == null)
-                {
-                    var resourceHandler = ResourceHandler.FromString("Post Data: null");
-                    stream = (MemoryStream)resourceHandler.Stream;
-                    mimeType = "text/html";
-                    callback.Continue();
-                }
-                else
-                {
-                    var postDataElement = postData.Elements.FirstOrDefault();
-                    var resourceHandler = ResourceHandler.FromString("Post Data: " + (postDataElement == null ? "null" : postDataElement.GetBody()));
-                    stream = (MemoryStream)resourceHandler.Stream;
-                    mimeType = "text/html";
-                    callback.Continue();
-                }
-
-                return true;
-            }
-
-            if (string.Equals(fileName, "/EmptyResponseFilterTest.html", StringComparison.OrdinalIgnoreCase))
-            {
-                stream = null;
-                mimeType = "text/html";
-                callback.Continue();
-
-                return true;
-            }
 
             string resource;
             if (ResourceDictionary.TryGetValue(fileName, out resource) && !string.IsNullOrEmpty(resource))

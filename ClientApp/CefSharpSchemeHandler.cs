@@ -27,7 +27,7 @@ namespace CefSharp.Example
                 { "/Example/Default.html", Resources.Default },
 
                 { "/Example/css/animate.min.css", Resources.animate_min },
-                { "/Example/css/bootstrap.min.css", Resources.animate_min },
+                { "/Example/css/bootstrap.min.css", Resources.bootstrap_min },
                 { "/Example/css/component.css", Resources.component },
                 { "/Example/css/font-awesome.min.css", Resources.font_awesome_min },
                 { "/Example/css/owl.carousel.css", Resources.owl_carousel },
@@ -35,14 +35,14 @@ namespace CefSharp.Example
                 { "/Example/css/style.css", Resources.style },
                 { "/Example/css/vegas.min.css", Resources.vegas_min },
 
-                { "/Example/js/bootstrap.min.js", Resources.bootstrap_min },
+                { "/Example/js/bootstrap.min.js", Resources.bootstrap_min1 },
                 { "/Example/js/custom.js", Resources.custom },
                 { "/Example/js/jquery.js", Resources.jquery },
                 { "/Example/js/modernizr.custom.js", Resources.modernizr_custom },
                 { "/Example/js/owl.carousel.min.js", Resources.owl_carousel_min },
                 { "/Example/js/smoothscroll.js", Resources.smoothscroll },
                 { "/Example/js/toucheffects.js", Resources.toucheffects },
-                { "/Example/js/vegas.min.js", Resources.vegas_min },
+                { "/Example/js/vegas.min.js", Resources.vegas_min1 },
                 { "/Example/js/wow.min.js", Resources.wow_min }
 
 

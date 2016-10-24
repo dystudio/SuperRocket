@@ -22,31 +22,77 @@ namespace CefSharp.Example
         
         static CefSharpSchemeHandler()
         {
-            ResourceDictionary = new Dictionary<string, string>
+            //ResourceDictionary = new Dictionary<string, string>
+            //{
+            //    { "/Example/Default.html", Resources.Default },
+
+            //    { "/Example/css/animate.min.css", Resources.animate_min },
+            //    { "/Example/css/bootstrap.min.css", Resources.bootstrap_min },
+            //    { "/Example/css/component.css", Resources.component },
+            //    { "/Example/css/font-awesome.min.css", Resources.font_awesome_min },
+            //    { "/Example/css/owl.carousel.css", Resources.owl_carousel },
+            //    { "/Example/css/owl.theme.css", Resources.owl_theme },
+            //    { "/Example/css/style.css", Resources.style },
+            //    { "/Example/css/vegas.min.css", Resources.vegas_min },
+
+            //    { "/Example/js/bootstrap.min.js", Resources.bootstrap_min1 },
+            //    { "/Example/js/custom.js", Resources.custom },
+            //    { "/Example/js/jquery.js", Resources.jquery },
+            //    { "/Example/js/modernizr.custom.js", Resources.modernizr_custom },
+            //    { "/Example/js/owl.carousel.min.js", Resources.owl_carousel_min },
+            //    { "/Example/js/smoothscroll.js", Resources.smoothscroll },
+            //    { "/Example/js/toucheffects.js", Resources.toucheffects },
+            //    { "/Example/js/vegas.min.js", Resources.vegas_min1 },
+            //    { "/Example/js/wow.min.js", Resources.wow_min }
+
+
+            //};
+
+            ResourceDictionary = new Dictionary<string, string>();
+
+            try
             {
-                { "/Example/Default.html", Resources.Default },
+                var rootPath = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules\{0}", "Example");//The path for the home page of the module
+                DirectoryInfo directoryInfo = new DirectoryInfo(rootPath);
+                DirectoryInfo[] directories = directoryInfo.GetDirectories();
 
-                { "/Example/css/animate.min.css", Resources.animate_min },
-                { "/Example/css/bootstrap.min.css", Resources.bootstrap_min },
-                { "/Example/css/component.css", Resources.component },
-                { "/Example/css/font-awesome.min.css", Resources.font_awesome_min },
-                { "/Example/css/owl.carousel.css", Resources.owl_carousel },
-                { "/Example/css/owl.theme.css", Resources.owl_theme },
-                { "/Example/css/style.css", Resources.style },
-                { "/Example/css/vegas.min.css", Resources.vegas_min },
+                FileInfo[] rootFiles = directoryInfo.GetFiles();
 
-                { "/Example/js/bootstrap.min.js", Resources.bootstrap_min1 },
-                { "/Example/js/custom.js", Resources.custom },
-                { "/Example/js/jquery.js", Resources.jquery },
-                { "/Example/js/modernizr.custom.js", Resources.modernizr_custom },
-                { "/Example/js/owl.carousel.min.js", Resources.owl_carousel_min },
-                { "/Example/js/smoothscroll.js", Resources.smoothscroll },
-                { "/Example/js/toucheffects.js", Resources.toucheffects },
-                { "/Example/js/vegas.min.js", Resources.vegas_min1 },
-                { "/Example/js/wow.min.js", Resources.wow_min }
+                foreach (var file in rootFiles)
+                {
+                    var filePath = file.FullName;
+                    StreamReader reader = new StreamReader(filePath, System.Text.Encoding.GetEncoding("utf-8"));
+                    var result = reader.ReadToEnd().ToString();
+                    var key = @"/Example/" + file.Name;
+                    ResourceDictionary.Add(key, result);
+                    reader.Close();
+                }
 
+                foreach (DirectoryInfo subfolder in directories)
+                {
+                    var currentPath = rootPath + @"\" + subfolder.Name;
+                    FileInfo[] fileInfos = subfolder.GetFiles();
+                    foreach (FileInfo file in fileInfos)
+                    {
+                        var filePath = file.FullName;
+                        StreamReader reader = new StreamReader(filePath, System.Text.Encoding.GetEncoding("utf-8"));
+                        var result = reader.ReadToEnd().ToString();
+                        var key = @"/Example/" + subfolder.Name + @"/" + file.Name;
+                        if (!key.Contains(".jpg"))
+                        {
+                            ResourceDictionary.Add(key, result);
+                        }
+                        
+                        reader.Close();
+                    }
+                }
 
-            };
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
 
         bool IResourceHandler.ProcessRequest(IRequest request, ICallback callback)

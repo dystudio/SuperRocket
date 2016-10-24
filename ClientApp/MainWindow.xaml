@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ClientApp"
         xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized">
+        Title="MainWindow" WindowState="Maximized"
+         WindowStyle="None">
     <Grid x:Name="container">
         <Grid.RowDefinitions>
             <RowDefinition />

@@ -22,32 +22,7 @@ namespace CefSharp.Example
         
         static CefSharpSchemeHandler()
         {
-            //ResourceDictionary = new Dictionary<string, string>
-            //{
-            //    { "/Example/Default.html", Resources.Default },
-
-            //    { "/Example/css/animate.min.css", Resources.animate_min },
-            //    { "/Example/css/bootstrap.min.css", Resources.bootstrap_min },
-            //    { "/Example/css/component.css", Resources.component },
-            //    { "/Example/css/font-awesome.min.css", Resources.font_awesome_min },
-            //    { "/Example/css/owl.carousel.css", Resources.owl_carousel },
-            //    { "/Example/css/owl.theme.css", Resources.owl_theme },
-            //    { "/Example/css/style.css", Resources.style },
-            //    { "/Example/css/vegas.min.css", Resources.vegas_min },
-
-            //    { "/Example/js/bootstrap.min.js", Resources.bootstrap_min1 },
-            //    { "/Example/js/custom.js", Resources.custom },
-            //    { "/Example/js/jquery.js", Resources.jquery },
-            //    { "/Example/js/modernizr.custom.js", Resources.modernizr_custom },
-            //    { "/Example/js/owl.carousel.min.js", Resources.owl_carousel_min },
-            //    { "/Example/js/smoothscroll.js", Resources.smoothscroll },
-            //    { "/Example/js/toucheffects.js", Resources.toucheffects },
-            //    { "/Example/js/vegas.min.js", Resources.vegas_min1 },
-            //    { "/Example/js/wow.min.js", Resources.wow_min }
-
-
-            //};
-
+            
             ResourceDictionary = new Dictionary<string, string>();
 
             try
@@ -148,27 +123,6 @@ namespace CefSharp.Example
             {
                 callback.Dispose();
             }
-            //if (!string.IsNullOrEmpty(fileName))
-            //{
-            //    var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules/{0}", fileName);//The path for the home page of the module
-
-            //    //Read local file to send to client
-            //    Task.Run(() =>
-            //    {
-
-            //            StreamReader reader = new StreamReader(path, System.Text.Encoding.GetEncoding("utf-8"));
-            //            var responseBody = reader.ReadToEnd().ToString();
-
-            //            var bytes = Encoding.UTF8.GetBytes(responseBody);
-            //            stream = new MemoryStream(bytes);
-
-            //            var fileExtension = Path.GetExtension(fileName);
-            //            mimeType = ResourceHandler.GetMimeType(fileExtension);
-
-            //    });
-
-            //    return true;
-            //}
 
             return false;
         }

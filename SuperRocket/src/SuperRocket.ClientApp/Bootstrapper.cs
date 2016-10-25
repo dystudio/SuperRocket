@@ -11,6 +11,8 @@ using log4net;
 using Prism.Logging;
 using SuperRocket.Framework.Log;
 using log4net.Config;
+using SuperRocket.Framework;
+using SuperRocket.Core;
 
 namespace SuperRocket.CientApp
 {
@@ -90,7 +92,8 @@ namespace SuperRocket.CientApp
 
             // Module CoreModule is defined in the code.
             var moduleCatalog = (ModuleCatalog)ModuleCatalog;
-            moduleCatalog.AddModule(typeof(Core.CoreModule));
+            moduleCatalog.AddModule(typeof(FrameworkModule));
+            moduleCatalog.AddModule(typeof(CoreModule));
         }
 
         private bool InterfaceFilter(Type typeObj, Object criteriaObj)

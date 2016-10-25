@@ -9,10 +9,10 @@ using SuperRocket.Core.Interfaces;
 using SuperRocket.ClientApp;
 using log4net;
 using Prism.Logging;
-using SuperRocket.Framework.Log;
 using log4net.Config;
-using SuperRocket.Framework;
 using SuperRocket.Core;
+using SuperRocket.Framework;
+using SuperRocket.Framework.Log;
 
 namespace SuperRocket.CientApp
 {

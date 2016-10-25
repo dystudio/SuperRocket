@@ -4,7 +4,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   xmlns:app="clr-namespace:SuperRocket.ClientApp"
                   Icon="dm.ico"
-                  Title="WPF Dynamic Modules Demo"
+                  Title="SuperRocket Framework"
                   IsTitleVisible="True"
                   LogoData="
                   M170 2035 l0 -905 303 0 c414 0 555 20 731 104 203 96 326 249 387 481 22 81 24 110 23 295 0 193 -2 210 -27 293 -75 244 -223 421 -442 528 -186 91 -302 109 -691 109 l-284 0 0 -905z m615 705 c218 -31 360 -106 474 -248 91 -113 130 -236 138 -432 16 -398 -135 -627 -468 -711 -69 -17 -127 -22 -316 -26 l-233 -6 0 717 0 716 168 0 c92 0 199 -5 237 -10z
@@ -16,6 +16,6 @@
 
     <mui:ModernWindow.TitleLinks>
         <mui:Link DisplayName="Settings" Source="/Views/SettingsView.xaml" />
-        <mui:Link DisplayName="Help" Source="https://github.com/hinojosachapel/DynamicModules" />
+        <mui:Link DisplayName="Help" Source="https://github.com/AccentureRapid/IDS" />
     </mui:ModernWindow.TitleLinks>
 </mui:ModernWindow>

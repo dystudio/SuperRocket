@@ -44,12 +44,12 @@ namespace SuperRocket.ClientApp
 
             linkGroup = new LinkGroup
             {
-                DisplayName = "Common"
+                DisplayName = "Introduction"
             };
 
             linkGroup.Links.Add(new Link
             {
-                DisplayName = "Dynamic Modules",
+                DisplayName = "SuperRocket Framework Introduction",
                 Source = GetUri(typeof(IntroductionView))
             });
 

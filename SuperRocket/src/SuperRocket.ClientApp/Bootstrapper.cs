@@ -7,6 +7,10 @@ using Prism.Unity;
 using FirstFloor.ModernUI.Presentation;
 using SuperRocket.Core.Interfaces;
 using SuperRocket.ClientApp;
+using log4net;
+using Prism.Logging;
+using SuperRocket.Framework.Log;
+using log4net.Config;
 
 namespace SuperRocket.CientApp
 {
@@ -60,6 +64,8 @@ namespace SuperRocket.CientApp
             var directoryCatalog = (DirectoryModuleCatalog)ModuleCatalog;
             directoryCatalog.Initialize();
 
+            Logger.Log("directoryCatalog Initialized",Category.Info,Priority.Low);
+
             linkGroupCollection = new LinkGroupCollection();
             var typeFilter = new TypeFilter(InterfaceFilter);
 
@@ -90,6 +96,13 @@ namespace SuperRocket.CientApp
         private bool InterfaceFilter(Type typeObj, Object criteriaObj)
         {
             return typeObj.ToString() == criteriaObj.ToString();
+        }
+
+        protected override ILoggerFacade CreateLogger()
+        {
+            var logger = new Log4NetLogger();
+            XmlConfigurator.Configure();
+            return logger;
         }
     }
 }

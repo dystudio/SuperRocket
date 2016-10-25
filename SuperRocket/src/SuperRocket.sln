@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.Core", "SuperRo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.ClientApp", "SuperRocket.ClientApp\SuperRocket.ClientApp.csproj", "{EFDBFC84-CFA2-4AB2-A94F-9A3CC58E091F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SuperRocket.Framework", "SuperRocket.Framework", "{94C6D3B4-3A89-43E3-8774-1907FE25307E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.Framework", "SuperRocket.Framework\SuperRocket.Framework.csproj", "{DEF6FD60-A038-4190-AE37-568BB5FB41F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{EFDBFC84-CFA2-4AB2-A94F-9A3CC58E091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFDBFC84-CFA2-4AB2-A94F-9A3CC58E091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFDBFC84-CFA2-4AB2-A94F-9A3CC58E091F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEF6FD60-A038-4190-AE37-568BB5FB41F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF6FD60-A038-4190-AE37-568BB5FB41F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF6FD60-A038-4190-AE37-568BB5FB41F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF6FD60-A038-4190-AE37-568BB5FB41F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +50,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{36B72692-ED5B-4DA8-98E7-795CAE23F342} = {B4821B4E-FD33-4426-94BD-41CA302FB6DF}
 		{9D0FFEDA-5F0D-489C-AEC8-603D2405CA0D} = {B4821B4E-FD33-4426-94BD-41CA302FB6DF}
+		{DEF6FD60-A038-4190-AE37-568BB5FB41F5} = {94C6D3B4-3A89-43E3-8774-1907FE25307E}
 	EndGlobalSection
 EndGlobal

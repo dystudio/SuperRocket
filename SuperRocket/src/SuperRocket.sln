@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{B4821B4E-FD33-4426-94BD-41CA302FB6DF}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.Core", "SuperRocket.Core\SuperRocket.Core.csproj", "{085A3767-0F46-4923-8EB5-596CE276FC47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.ClientApp", "SuperRocket.ClientApp\SuperRocket.ClientApp.csproj", "{EFDBFC84-CFA2-4AB2-A94F-9A3CC58E091F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36B72692-ED5B-4DA8-98E7-795CAE23F342} = {36B72692-ED5B-4DA8-98E7-795CAE23F342}
+		{9D0FFEDA-5F0D-489C-AEC8-603D2405CA0D} = {9D0FFEDA-5F0D-489C-AEC8-603D2405CA0D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.Framework", "SuperRocket.Framework\SuperRocket.Framework.csproj", "{DEF6FD60-A038-4190-AE37-568BB5FB41F5}"
 EndProject

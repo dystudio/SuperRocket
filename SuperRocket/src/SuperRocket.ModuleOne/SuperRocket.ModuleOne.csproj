@@ -102,7 +102,14 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResourceHandler\CefSharpLocalResourceSchemeHandler.cs" />
+    <Compile Include="ResourceHandler\CefSharpSchemeHandlerFactory.cs" />
+    <Compile Include="ResourceHandler\MenuHandler.cs" />
+    <Compile Include="ResourceHandler\RequestHandler.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
+    <Compile Include="Views\Chromium.xaml.cs">
+      <DependentUpon>Chromium.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DataGrid.xaml.cs">
       <DependentUpon>DataGrid.xaml</DependentUpon>
     </Compile>
@@ -117,6 +124,10 @@
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Chromium.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\DataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -160,6 +171,22 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.BrowserSubprocess\CefSharp.BrowserSubprocess.csproj">
+      <Project>{23ee5140-2c2c-4b53-a954-10b08dca6bd6}</Project>
+      <Name>CefSharp.BrowserSubprocess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.Core\CefSharp.Core.vcxproj">
+      <Project>{7b495581-2271-4f41-9476-acb86e8c864f}</Project>
+      <Name>CefSharp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.Wpf\CefSharp.Wpf.csproj">
+      <Project>{e6cb3790-f267-4ac7-892c-2620737682ca}</Project>
+      <Name>CefSharp.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp\CefSharp.csproj">
+      <Project>{a55848cc-10e7-40cb-addb-04740b16dd43}</Project>
+      <Name>CefSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuperRocket.Core\SuperRocket.Core.csproj">
       <Project>{085a3767-0f46-4923-8eb5-596ce276fc47}</Project>
       <Name>SuperRocket.Core</Name>
@@ -167,7 +194,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)$(TargetFileName)" "$(TargetDir)modules\" /y</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetFileName)" "$(SolutionDir)bin\x86\Debug\modules\" /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

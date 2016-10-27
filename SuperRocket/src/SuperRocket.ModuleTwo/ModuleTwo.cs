@@ -21,7 +21,7 @@ namespace SuperRocket.ModuleTwo
         public void Initialize()
         {
             //_container.RegisterType<InterfaceName, ClassName>();
-            System.Windows.MessageBox.Show($"{nameof(ModuleTwo)} has been initialized ;-)");
+            //System.Windows.MessageBox.Show($"{nameof(ModuleTwo)} has been initialized ;-)");
         }
     }
 }

@@ -269,6 +269,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Resource\Modules\Example\fonts\fontawesome-webfont.eot" />
+    <Resource Include="Resource\Modules\Example\fonts\fontawesome-webfont.ttf" />
+    <None Include="Resource\Modules\Example\fonts\fontawesome-webfont.woff" />
+    <None Include="Resource\Modules\Example\fonts\fontawesome-webfont.woff2" />
+    <Resource Include="Resource\Modules\Example\fonts\FontAwesome.otf" />
+    <None Include="Resource\Modules\Example\js\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -325,6 +331,43 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Modules\Example\css\animate.min.css" />
+    <Content Include="Resource\Modules\Example\css\bootstrap.min.css" />
+    <Content Include="Resource\Modules\Example\css\component.css" />
+    <Content Include="Resource\Modules\Example\css\font-awesome.min.css" />
+    <Content Include="Resource\Modules\Example\css\owl.carousel.css" />
+    <Content Include="Resource\Modules\Example\css\owl.theme.css" />
+    <Content Include="Resource\Modules\Example\css\style.css" />
+    <Content Include="Resource\Modules\Example\css\vegas.min.css" />
+    <Content Include="Resource\Modules\Example\Default.html" />
+    <Content Include="Resource\Modules\Example\fonts\fontawesome-webfont.svg" />
+    <Resource Include="Resource\Modules\Example\images\about-img.jpg" />
+    <Resource Include="Resource\Modules\Example\images\gallery-img1.jpg" />
+    <Resource Include="Resource\Modules\Example\images\gallery-img2.jpg" />
+    <Resource Include="Resource\Modules\Example\images\gallery-img3.jpg" />
+    <Resource Include="Resource\Modules\Example\images\gallery-img4.jpg" />
+    <Resource Include="Resource\Modules\Example\images\slide-img1.jpg" />
+    <Resource Include="Resource\Modules\Example\images\slide-img2.jpg" />
+    <Resource Include="Resource\Modules\Example\images\slide-img3.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img1.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img2.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img3.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img4.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img5.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img6.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img7.jpg" />
+    <Resource Include="Resource\Modules\Example\images\team-img8.jpg" />
+    <Content Include="Resource\Modules\Example\js\bootstrap.min.js" />
+    <Content Include="Resource\Modules\Example\js\custom.js" />
+    <Content Include="Resource\Modules\Example\js\jquery.js" />
+    <Content Include="Resource\Modules\Example\js\modernizr.custom.js" />
+    <Content Include="Resource\Modules\Example\js\owl.carousel.min.js" />
+    <Content Include="Resource\Modules\Example\js\smoothscroll.js" />
+    <Content Include="Resource\Modules\Example\js\toucheffects.js" />
+    <Content Include="Resource\Modules\Example\js\vegas.min.js" />
+    <Content Include="Resource\Modules\Example\js\wow.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

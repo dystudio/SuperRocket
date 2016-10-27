@@ -36,7 +36,7 @@ namespace SuperRocket.ModuleOne.Views
             {
                 var moduleName = "Example";//It will be got from the menu click event with module name passed
                 homePageUrl = string.Format(defaultUrl, moduleName);
-                var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Resource/Modules/{0}/Default.html", moduleName);//The path for the home page of the module
+                var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Resource\Modules\{0}\Default.html", moduleName);//The path for the home page of the module
                 StreamReader reader = new StreamReader(path, System.Text.Encoding.GetEncoding("utf-8"));
                 var responseBody = reader.ReadToEnd().ToString();
                 reader.Close();

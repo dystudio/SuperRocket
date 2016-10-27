@@ -375,7 +375,7 @@
   <Import Project="..\packages\cef.redist.x64.3.2785.1482\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2785.1482\build\cef.redist.x64.targets')" />
   <Import Project="..\packages\cef.redist.x86.3.2785.1482\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2785.1482\build\cef.redist.x86.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /s /y $(ProjectDir)Resource $(TargetDir)Resource</PostBuildEvent>
+    <PostBuildEvent>xcopy $(ProjectDir)\Resource $(TargetDir)\Resource /e /i /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

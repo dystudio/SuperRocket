@@ -84,6 +84,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResourceHandler\CefSharpLocalResourceSchemeHandler.cs" />
+    <Compile Include="ResourceHandler\CefSharpSchemeHandlerFactory.cs" />
+    <Compile Include="ResourceHandler\MenuHandler.cs" />
+    <Compile Include="ResourceHandler\RequestHandler.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
     <Compile Include="Views\Chromium.xaml.cs">
       <DependentUpon>Chromium.xaml</DependentUpon>

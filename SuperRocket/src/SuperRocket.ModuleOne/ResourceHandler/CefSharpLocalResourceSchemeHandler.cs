@@ -104,7 +104,7 @@ namespace SuperRocket.ModuleOne.ResourceHandler
                 {
                     using (callback)
                     {
-                        var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules/{0}", fileName);//The path for the home page of the module
+                        var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Resource\Modules\{0}", fileName);//The path for the home page of the module
                         FileStream fs = File.OpenRead(path);
                         int filelength = 0;
                         filelength = (int)fs.Length;

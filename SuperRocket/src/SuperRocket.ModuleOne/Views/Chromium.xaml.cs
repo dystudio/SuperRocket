@@ -23,6 +23,20 @@ namespace SuperRocket.ModuleOne.Views
 
         private void InitializeBrowser()
         {
+            var settings = new CefSettings();
+
+
+            settings.RemoteDebuggingPort = 8088;
+
+            settings.RegisterScheme(new CefCustomScheme
+            {
+                SchemeName = "ids",
+                SchemeHandlerFactory = new CefSharpSchemeHandlerFactory()
+                //SchemeHandlerFactory = new InMemorySchemeAndResourceHandlerFactory()
+            });
+
+            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
+
             var browser = new ChromiumWebBrowser();
 
             //BrowserSettings browserSettings = new BrowserSettings();

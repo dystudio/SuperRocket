@@ -27,7 +27,7 @@ namespace SuperRocket.ModuleOne.ResourceHandler
 
             try
             {
-                var rootPath = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Modules\{0}", "Example");//The path for the home page of the module
+                var rootPath = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Resource\Modules\{0}", "Example");//The path for the home page of the module
                 DirectoryInfo directoryInfo = new DirectoryInfo(rootPath);
                 DirectoryInfo[] directories = directoryInfo.GetDirectories();
 

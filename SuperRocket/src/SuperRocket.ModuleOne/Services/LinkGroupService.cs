@@ -18,12 +18,12 @@ namespace SuperRocket.ModuleOne.Services
         {
             LinkGroup linkGroup = new LinkGroup
             {
-                DisplayName = "Module One"
+                DisplayName = "Super Chromium"
             };
 
             linkGroup.Links.Add(new Link
             {
-                DisplayName = "Module One",
+                DisplayName = "Super Chromium",
                 Source = new Uri($"/SuperRocket.ModuleOne;component/Views/{nameof(MainView)}.xaml", UriKind.Relative)
             });
 

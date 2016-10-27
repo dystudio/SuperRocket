@@ -8,12 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid Style="{StaticResource ContentRoot}">
-        <mui:ModernTab SelectedSource="/SuperRocket.ModuleOne;component/Views/DataGrid.xaml" Layout="List">
-            <mui:ModernTab.Links>
-                <mui:Link DisplayName="Option 1" Source="/SuperRocket.ModuleOne;component/Views/DataGrid.xaml" />
-                <mui:Link DisplayName="Option 2" Source="/SuperRocket.ModuleOne;component/Views/LoremIpsum1.xaml" />
-                <mui:Link DisplayName="Option 3" Source="/SuperRocket.ModuleOne;component/Views/LoremIpsum2.xaml" />
-            </mui:ModernTab.Links>
+        <mui:ModernTab x:Name="chromiumTab" SelectedSource="/SuperRocket.ModuleOne;component/Views/DataGrid.xaml" Layout="List">
         </mui:ModernTab>
     </Grid>
     

@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 
 namespace SuperRocket.ModuleOne.Views
 {
@@ -10,6 +11,21 @@ namespace SuperRocket.ModuleOne.Views
         public MainView()
         {
             InitializeComponent();
+            InitializeMenu();
+        }
+
+        private void InitializeMenu()
+        {
+            //TODO here will load all the modules information and then initialize the memu for modules
+            var link = new FirstFloor.ModernUI.Presentation.Link();
+            link.DisplayName = "IDS";
+            link.Source = GetUri(typeof(Chromium));
+            this.chromiumTab.Links.Add(link);
+        }
+
+        private Uri GetUri(Type viewType)
+        {
+            return new Uri($"/SuperRocket.ModuleOne;component/Views/{viewType.Name}.xaml", UriKind.Relative);
         }
     }
 }

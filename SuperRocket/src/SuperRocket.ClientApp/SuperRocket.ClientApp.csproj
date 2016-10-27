@@ -14,9 +14,24 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -249,6 +264,22 @@
     <Resource Include="dm.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.BrowserSubprocess\CefSharp.BrowserSubprocess.csproj">
+      <Project>{23ee5140-2c2c-4b53-a954-10b08dca6bd6}</Project>
+      <Name>CefSharp.BrowserSubprocess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.Core\CefSharp.Core.vcxproj">
+      <Project>{7b495581-2271-4f41-9476-acb86e8c864f}</Project>
+      <Name>CefSharp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.Wpf\CefSharp.Wpf.csproj">
+      <Project>{e6cb3790-f267-4ac7-892c-2620737682ca}</Project>
+      <Name>CefSharp.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp\CefSharp.csproj">
+      <Project>{a55848cc-10e7-40cb-addb-04740b16dd43}</Project>
+      <Name>CefSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuperRocket.Core\SuperRocket.Core.csproj">
       <Project>{085a3767-0f46-4923-8eb5-596ce276fc47}</Project>
       <Name>SuperRocket.Core</Name>
@@ -260,6 +291,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Modules\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

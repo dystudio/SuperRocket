@@ -8,9 +8,7 @@ namespace SuperRocket.ModuleOne.ResourceHandler
 {
     public class CefSharpSchemeHandlerFactory : ISchemeHandlerFactory
     {
-        public const string SchemeName = "custom";
-        public const string SchemeNameTest = "test";
-
+        public const string SchemeName = "local";
         public IResourceHandler Create(IBrowser browser, IFrame frame, string schemeName, IRequest request)
         {
             if (schemeName == SchemeName && request.Url.EndsWith("CefSharp.Core.xml", System.StringComparison.OrdinalIgnoreCase))

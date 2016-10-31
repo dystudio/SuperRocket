@@ -16,7 +16,6 @@ namespace SuperRocket.ModuleOne.ViewModels
 {
     public class ChromiumViewModel : BindableBase
     {
-        private ObservableCollection<Customer> customers;
         private string address;
         public string Address
         {
@@ -40,18 +39,11 @@ namespace SuperRocket.ModuleOne.ViewModels
         }
 
         public ICommand ShowDevToolsCommand { get; private set; }
-        public ObservableCollection<Customer> Customers
-        {
-            get { return customers; }
-            set { SetProperty(ref customers, value); }
-        }
 
         public ChromiumViewModel(
             ICustomerService service,
             IBrowserManager manager)
         {
-            Customers = new ObservableCollection<Customer>();
-            Customers.AddRange(service.GetAllCustomers().OrderBy(c => c.FirstName));
 
             WebBrowser = manager.CreateBrowser();
             Address = "local://Resource/Modules/Example/Default.html";

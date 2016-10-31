@@ -8,6 +8,7 @@ using CefSharp.Wpf;
 using System.Windows.Input;
 using FirstFloor.ModernUI.Presentation;
 using System;
+using Prism.Commands;
 
 namespace SuperRocket.ModuleOne.ViewModels
 {
@@ -35,7 +36,8 @@ namespace SuperRocket.ModuleOne.ViewModels
             get { return webBrowser; }
             set { SetProperty(ref webBrowser, value); }
         }
-       
+
+        public ICommand ShowDevToolsCommand { get; private set; }
         public ObservableCollection<Customer> Customers
         {
             get { return customers; }
@@ -53,13 +55,14 @@ namespace SuperRocket.ModuleOne.ViewModels
 
             Address = "local://Resource/Modules/Example/Default.html";
             Title = "This is a module for Super Rocket";
+
+            ShowDevToolsCommand = new DelegateCommand(this.ShowDevTools);
         }
 
 
-        private void Go()
+        private void ShowDevTools()
         {
-            Address = "";
-            // Part of the Focus hack further described in the OnPropertyChanged() method...
+            WebBrowser.GetBrowser().GetHost().ShowDevTools();
             Keyboard.ClearFocus();
         }
     }

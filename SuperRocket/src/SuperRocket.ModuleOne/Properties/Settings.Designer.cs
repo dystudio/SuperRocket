@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SuperRocket.ModuleOne.Properties {
+namespace SuperRocket.SuperChromium.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

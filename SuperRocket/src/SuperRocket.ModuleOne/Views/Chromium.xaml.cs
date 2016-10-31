@@ -1,13 +1,13 @@
 ﻿using CefSharp;
 using CefSharp.Wpf;
-using SuperRocket.ModuleOne.ResourceHandler;
-using SuperRocket.ModuleOne.Services;
-using SuperRocket.ModuleOne.ViewModels;
+using SuperRocket.SuperChromium.ResourceHandler;
+using SuperRocket.SuperChromium.Services;
+using SuperRocket.SuperChromium.ViewModels;
 using System;
 using System.IO;
 using System.Windows.Controls;
 
-namespace SuperRocket.ModuleOne.Views
+namespace SuperRocket.SuperChromium.Views
 {
     /// <summary>
     /// Interaction logic for Chromium.xaml

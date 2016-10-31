@@ -3,10 +3,10 @@ using System.Linq;
 using Prism.Mvvm;
 using SuperRocket.Core.Model;
 using SuperRocket.Core.Services;
-using SuperRocket.ModuleOne.Services;
+using SuperRocket.SuperChromium.Services;
 using CefSharp.Wpf;
 
-namespace SuperRocket.ModuleOne.ViewModels
+namespace SuperRocket.SuperChromium.ViewModels
 {
     public class DataGridViewModel : BindableBase
     {

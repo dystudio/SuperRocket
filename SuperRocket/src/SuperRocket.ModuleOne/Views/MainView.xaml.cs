@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Controls;
 
-namespace SuperRocket.ModuleOne.Views
+namespace SuperRocket.SuperChromium.Views
 {
     /// <summary>
     /// Interaction logic for MainView.xaml
@@ -25,7 +25,7 @@ namespace SuperRocket.ModuleOne.Views
 
         private Uri GetUri(Type viewType)
         {
-            return new Uri($"/SuperRocket.ModuleOne;component/Views/{viewType.Name}.xaml", UriKind.Relative);
+            return new Uri($"/SuperRocket.SuperChromium;component/Views/{viewType.Name}.xaml", UriKind.Relative);
         }
     }
 }

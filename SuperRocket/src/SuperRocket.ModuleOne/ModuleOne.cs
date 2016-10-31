@@ -1,15 +1,15 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
-using SuperRocket.ModuleOne.Services;
+using SuperRocket.SuperChromium.Services;
 
-namespace SuperRocket.ModuleOne
+namespace SuperRocket.SuperChromium
 {
-    public class ModuleOne : IModule
+    public class SuperChromium : IModule
     {
         private readonly IUnityContainer _container;
         
-        public ModuleOne(IUnityContainer container)
+        public SuperChromium(IUnityContainer container)
         {
             if (container == null)
             {

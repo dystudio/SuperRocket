@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperRocket.ModuleOne.Services
+namespace SuperRocket.SuperChromium.Services
 {
     public interface IBrowserManager
     {

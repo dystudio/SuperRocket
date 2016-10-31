@@ -4,7 +4,7 @@
 
 using CefSharp;
 
-namespace SuperRocket.ModuleOne.ResourceHandler
+namespace SuperRocket.SuperChromium.ResourceHandler
 {
     public class CefSharpSchemeHandlerFactory : ISchemeHandlerFactory
     {

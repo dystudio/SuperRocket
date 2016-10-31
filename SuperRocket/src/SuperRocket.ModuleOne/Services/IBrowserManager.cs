@@ -9,6 +9,6 @@ namespace SuperRocket.ModuleOne.Services
 {
     public interface IBrowserManager
     {
-        ChromiumWebBrowser CreateBrowser();
+        void CefInitialize();
     }
 }

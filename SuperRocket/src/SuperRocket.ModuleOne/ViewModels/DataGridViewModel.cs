@@ -24,8 +24,6 @@ namespace SuperRocket.ModuleOne.ViewModels
         {
             Customers = new ObservableCollection<Customer>();
             Customers.AddRange(service.GetAllCustomers().OrderBy(c => c.FirstName));
-
-            Browser = manager.CreateBrowser();
         }
     }
 }

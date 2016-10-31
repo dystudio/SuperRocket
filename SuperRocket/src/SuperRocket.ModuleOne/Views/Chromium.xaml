@@ -27,7 +27,7 @@
                                      Address="{Binding Address, Mode=TwoWay}"
                                      Title="{Binding Title, Mode=OneWayToSource}"
                                      AllowDrop="True"
-                                     WebBrowser="{Binding WebBrowser, Mode=TwoWay}">
+                                     WebBrowser="{Binding WebBrowser,  Mode=OneWayToSource}">
         </cefSharp:ChromiumWebBrowser>
         <StatusBar Grid.Row="1">
             <ProgressBar HorizontalAlignment="Right"

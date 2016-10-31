@@ -44,8 +44,8 @@ namespace SuperRocket.ModuleOne.ViewModels
             ICustomerService service,
             IBrowserManager manager)
         {
+            manager.CefInitialize();
 
-            WebBrowser = manager.CreateBrowser();
             Address = "local://Resource/Modules/Example/Default.html";
             Title = "This is a module for Super Rocket";
 

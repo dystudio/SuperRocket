@@ -17,7 +17,7 @@ namespace SuperRocket.ModuleOne.Views
         //0: scheme name 1: module name 2: default page name
         const string defaultHomePageName = "default.html";
         const string defaultUrlTemplate = "{0}://Resource/Modules/{1}/{2}";
-
+        const string defaultModuleHomePageRelativePath = @"Resource\Modules\{0}\{1}";
         private string homePageUrl = string.Empty;
         public Chromium()
         {
@@ -32,7 +32,7 @@ namespace SuperRocket.ModuleOne.Views
             {
                 var moduleName = "Example";//It will be got from the menu click event with module name passed
                 homePageUrl = string.Format(defaultUrlTemplate, CefSharpSchemeHandlerFactory.SchemeName, moduleName, defaultHomePageName);
-                var defaultHomePageAbsolutePath = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Resource\Modules\{0}\{1}", moduleName, defaultHomePageName);//The path for the home page of the module
+                var defaultHomePageAbsolutePath = AppDomain.CurrentDomain.BaseDirectory + string.Format(defaultModuleHomePageRelativePath, moduleName, defaultHomePageName);//The path for the home page of the module
                 StreamReader reader = new StreamReader(defaultHomePageAbsolutePath, System.Text.Encoding.GetEncoding("utf-8"));
                 var responseBody = reader.ReadToEnd().ToString();
                 reader.Close();

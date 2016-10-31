@@ -53,7 +53,7 @@ namespace SuperRocket.ClientApp.ViewModels
             //this.themes.Add(new Link { DisplayName = "dark", Source = AppearanceManager.DarkThemeSource });
 
             // add additional themes
-            this.themes.Add(new Link { DisplayName = "dynamic modules", Source = new Uri(ThemesPath.DM, UriKind.Relative) });
+            this.themes.Add(new Link { DisplayName = "super rocket", Source = new Uri(ThemesPath.SuperRocket, UriKind.Relative) });
             this.themes.Add(new Link { DisplayName = "light", Source = new Uri(ThemesPath.Light, UriKind.Relative) });
             this.themes.Add(new Link { DisplayName = "dark", Source = new Uri(ThemesPath.Dark, UriKind.Relative) });
             this.themes.Add(new Link { DisplayName = "light bing image", Source = new Uri(ThemesPath.LightBingImage, UriKind.Relative) });

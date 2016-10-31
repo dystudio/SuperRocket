@@ -11,7 +11,7 @@ namespace SuperRocket.ClientApp
         public Shell()
         {
             InitializeComponent();
-            AppearanceManager.Current.ThemeSource = new Uri(ThemesPath.DM, UriKind.Relative);
+            AppearanceManager.Current.ThemeSource = new Uri(ThemesPath.SuperRocket, UriKind.Relative);
         }
 
         public void AddLinkGroups(LinkGroupCollection linkGroupCollection)

@@ -2,6 +2,7 @@
 using CefSharp.Wpf;
 using SuperRocket.ModuleOne.ResourceHandler;
 using SuperRocket.ModuleOne.Services;
+using SuperRocket.ModuleOne.ViewModels;
 using System;
 using System.IO;
 using System.Windows.Controls;
@@ -13,16 +14,17 @@ namespace SuperRocket.ModuleOne.Views
     /// </summary>
     public partial class Chromium : UserControl
     {
-        private IBrowserManager _manager;
         public Chromium()
         {
             InitializeComponent();
             InitializeBrowser();
         }
 
+       
         private void InitializeBrowser()
         {
-            var browser = _manager.CreateBrowser();
+            var browser =  new ChromiumWebBrowser();
+
             chromiumContainer.Children.Insert(0, browser);
         }
     }

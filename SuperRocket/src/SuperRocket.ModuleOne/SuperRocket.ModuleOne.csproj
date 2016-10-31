@@ -108,6 +108,7 @@
     <Compile Include="ResourceHandler\RequestHandler.cs" />
     <Compile Include="Services\BrowserManager.cs" />
     <Compile Include="Services\IBrowserManager.cs" />
+    <Compile Include="ViewModels\ChromiumViewModel.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
     <Compile Include="Views\Chromium.xaml.cs">
       <DependentUpon>Chromium.xaml</DependentUpon>

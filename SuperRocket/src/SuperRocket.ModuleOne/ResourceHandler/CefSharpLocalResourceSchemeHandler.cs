@@ -38,7 +38,7 @@ namespace SuperRocket.ModuleOne.ResourceHandler
                     var filePath = file.FullName;
                     StreamReader reader = new StreamReader(filePath, System.Text.Encoding.GetEncoding("utf-8"));
                     var result = reader.ReadToEnd().ToString();
-                    var key = @"/Example/" + file.Name;
+                    var key = @"/Modules/Example/" + file.Name;
                     ResourceDictionary.Add(key, result);
                     reader.Close();
                 }
@@ -52,7 +52,7 @@ namespace SuperRocket.ModuleOne.ResourceHandler
                         var filePath = file.FullName;
                         StreamReader reader = new StreamReader(filePath, System.Text.Encoding.GetEncoding("utf-8"));
                         var result = reader.ReadToEnd().ToString();
-                        var key = @"/Example/" + subfolder.Name + @"/" + file.Name;
+                        var key = @"/Modules/Example/" + subfolder.Name + @"/" + file.Name;
                         if (!key.Contains(".jpg"))
                         {
                             ResourceDictionary.Add(key, result);
@@ -104,7 +104,7 @@ namespace SuperRocket.ModuleOne.ResourceHandler
                 {
                     using (callback)
                     {
-                        var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Resource\Modules\{0}", fileName);//The path for the home page of the module
+                        var path = AppDomain.CurrentDomain.BaseDirectory + string.Format(@"Resource\{0}", fileName);//The path for the home page of the module
                         FileStream fs = File.OpenRead(path);
                         int filelength = 0;
                         filelength = (int)fs.Length;

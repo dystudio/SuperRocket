@@ -7,7 +7,7 @@
              xmlns:model="clr-namespace:SuperRocket.Core.Model;assembly=SuperRocket.Core"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+             xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              >
@@ -16,7 +16,18 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
+        <!--<cefSharp:ChromiumWebBrowser x:Name="browser"
+                                  Address="{Binding Address, Mode=TwoWay}"
+                                  Title="{Binding Title, Mode=OneWayToSource}"
+                                  AllowDrop="True"
+                                  WebBrowser="{Binding WebBrowser, Mode=TwoWay}"
+                                  RenderOptions.BitmapScalingMode="{Binding ElementName=scalingModeComboBox, Path=SelectedItem}">
+        </cefSharp:ChromiumWebBrowser>-->
+        <cefSharp:ChromiumWebBrowser x:Name="browser"
+                                     Address="{Binding Address, Mode=TwoWay}"
+                                     AllowDrop="True"
+                                     WebBrowser="{Binding WebBrowser, Mode=TwoWay}">
+        </cefSharp:ChromiumWebBrowser>
         <StatusBar Grid.Row="1">
             <ProgressBar HorizontalAlignment="Right"
                          IsIndeterminate="{Binding WebBrowser.IsLoading}"
@@ -28,14 +39,4 @@
             <TextBlock />
         </StatusBar>
     </Grid>
-    <!--<Grid MaxWidth="{StaticResource ViewMaxWidth}" HorizontalAlignment="Left">
-        <Grid.Resources>
-            --><!--Create list of enumeration values--><!--
-        </Grid.Resources>
-        
-        <DockPanel>
-            <TextBlock DockPanel.Dock="Top" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
-           
-        </DockPanel>
-    </Grid>-->
 </UserControl>

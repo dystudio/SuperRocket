@@ -19,15 +19,19 @@ namespace SuperRocket.ModuleOne.Services
         private string homePageUrl = string.Empty;
         public ChromiumWebBrowser CreateBrowser()
         {
-            var settings = new CefSettings();
-            settings.RemoteDebuggingPort = 8088;
-            settings.RegisterScheme(new CefCustomScheme
+            if (!Cef.IsInitialized)
             {
-                SchemeName = CefSharpSchemeHandlerFactory.SchemeName,
-                SchemeHandlerFactory = new CefSharpSchemeHandlerFactory()
-                //SchemeHandlerFactory = new InMemorySchemeAndResourceHandlerFactory()
-            });
-            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
+                var settings = new CefSettings();
+                settings.RemoteDebuggingPort = 8088;
+                settings.RegisterScheme(new CefCustomScheme
+                {
+                    SchemeName = CefSharpSchemeHandlerFactory.SchemeName,
+                    SchemeHandlerFactory = new CefSharpSchemeHandlerFactory()
+                    //SchemeHandlerFactory = new InMemorySchemeAndResourceHandlerFactory()
+                });
+                Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
+            }
+
             var browser = new ChromiumWebBrowser();
             var handler = browser.ResourceHandlerFactory as DefaultResourceHandlerFactory;
             if (handler != null)

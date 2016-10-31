@@ -45,7 +45,7 @@ namespace SuperRocket.ModuleOne.ViewModels
             IBrowserManager manager)
         {
             manager.CefInitialize();
-
+            //TODO get the enabled module's default home page to set the address.
             Address = "local://Resource/Modules/Example/Default.html";
             Title = "This is a module for Super Rocket";
 

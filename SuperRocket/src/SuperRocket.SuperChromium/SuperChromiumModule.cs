@@ -5,11 +5,11 @@ using SuperRocket.SuperChromium.Services;
 
 namespace SuperRocket.SuperChromium
 {
-    public class SuperChromium : IModule
+    public class SuperChromiumModule : IModule
     {
         private readonly IUnityContainer _container;
         
-        public SuperChromium(IUnityContainer container)
+        public SuperChromiumModule(IUnityContainer container)
         {
             if (container == null)
             {

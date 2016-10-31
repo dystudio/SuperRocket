@@ -123,7 +123,7 @@
       <DependentUpon>LoremIpsum1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\LinkGroupService.cs" />
-    <Compile Include="ModuleOne.cs" />
+    <Compile Include="SuperChromiumModule.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>

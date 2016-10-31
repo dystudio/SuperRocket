@@ -21,10 +21,9 @@ namespace SuperRocket.ModuleOne
 
         public void Initialize()
         {
-            BrowserManager manager = new BrowserManager();
-            _container.RegisterInstance(typeof(IBrowserManager), manager);
-            //_container.RegisterType<IBrowserManager, BrowserManager>(new ContainerControlledLifetimeManager());
-            //System.Windows.MessageBox.Show($"{nameof(ModuleOne)} has been initialized ;-)");
+            //BrowserManager manager = new BrowserManager();
+            //_container.RegisterInstance(typeof(IBrowserManager), manager);
+            _container.RegisterType<IBrowserManager, BrowserManager>(new ContainerControlledLifetimeManager());
         }
     }
 }

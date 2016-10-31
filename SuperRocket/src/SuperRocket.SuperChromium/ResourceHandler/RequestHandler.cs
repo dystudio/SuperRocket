@@ -6,7 +6,7 @@ using CefSharp;
 using System;
 //using CefSharp.Example.Filters;
 
-namespace SuperRocket.ModuleOne.ResourceHandler
+namespace SuperRocket.SuperChromium.ResourceHandler
 {
     public class RequestHandler : IRequestHandler
     {

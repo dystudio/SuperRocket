@@ -7,8 +7,8 @@ using System.Windows;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("SuperRocket.ModuleOne")]
-[assembly: AssemblyDescription("ModuleOne")]
+[assembly: AssemblyTitle("SuperRocket.SuperChromium")]
+[assembly: AssemblyDescription("SuperChromium")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("dystudio")]
 [assembly: AssemblyProduct("Super Rocket")]

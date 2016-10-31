@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace SuperRocket.ModuleOne.Views
+namespace SuperRocket.SuperChromium.Views
 {
     /// <summary>
     /// Interaction logic for DataGrid.xaml

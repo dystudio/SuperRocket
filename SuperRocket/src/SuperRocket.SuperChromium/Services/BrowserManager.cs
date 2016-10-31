@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using CefSharp.Wpf;
 using CefSharp;
-using SuperRocket.ModuleOne.ResourceHandler;
+using SuperRocket.SuperChromium.ResourceHandler;
 using System.IO;
 
-namespace SuperRocket.ModuleOne.Services
+namespace SuperRocket.SuperChromium.Services
 {
     public class BrowserManager : IBrowserManager
     {

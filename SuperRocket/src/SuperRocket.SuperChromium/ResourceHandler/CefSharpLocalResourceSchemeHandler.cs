@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CefSharp;
 
-namespace SuperRocket.ModuleOne.ResourceHandler
+namespace SuperRocket.SuperChromium.ResourceHandler
 {
     internal class CefSharpLocalResourceSchemeHandler : IResourceHandler
     {

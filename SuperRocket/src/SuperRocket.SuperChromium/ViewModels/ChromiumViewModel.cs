@@ -3,16 +3,16 @@ using System.Linq;
 using Prism.Mvvm;
 using SuperRocket.Core.Model;
 using SuperRocket.Core.Services;
-using SuperRocket.ModuleOne.Services;
+using SuperRocket.SuperChromium.Services;
 using CefSharp.Wpf;
 using System.Windows.Input;
 using FirstFloor.ModernUI.Presentation;
 using System;
 using Prism.Commands;
 using CefSharp;
-using SuperRocket.ModuleOne.ResourceHandler;
+using SuperRocket.SuperChromium.ResourceHandler;
 
-namespace SuperRocket.ModuleOne.ViewModels
+namespace SuperRocket.SuperChromium.ViewModels
 {
     public class ChromiumViewModel : BindableBase
     {

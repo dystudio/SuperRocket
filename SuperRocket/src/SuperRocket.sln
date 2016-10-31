@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{B4821B4E-FD33-4426-94BD-41CA302FB6DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.SuperChromium", "SuperRocket.ModuleOne\SuperRocket.SuperChromium.csproj", "{36B72692-ED5B-4DA8-98E7-795CAE23F342}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.ModuleTwo", "SuperRocket.ModuleTwo\SuperRocket.ModuleTwo.csproj", "{9D0FFEDA-5F0D-489C-AEC8-603D2405CA0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRocket.Core", "SuperRocket.Core\SuperRocket.Core.csproj", "{085A3767-0F46-4923-8EB5-596CE276FC47}"

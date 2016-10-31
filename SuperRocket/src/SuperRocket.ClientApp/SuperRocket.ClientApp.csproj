@@ -276,6 +276,7 @@
     <None Include="Resource\Modules\Example\fonts\fontawesome-webfont.woff2" />
     <Resource Include="Resource\Modules\Example\fonts\FontAwesome.otf" />
     <None Include="Resource\Modules\Example\js\.DS_Store" />
+    <Resource Include="Themes\SuperRocket32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -338,7 +339,6 @@
     <Content Include="Resource\Modules\Example\css\vegas.min.css" />
     <Content Include="Resource\Modules\Example\Default.html" />
     <Content Include="Resource\Modules\Example\fonts\fontawesome-webfont.svg" />
-    <Resource Include="Themes\SuperRocket32.png" />
     <Resource Include="SuperRocket.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

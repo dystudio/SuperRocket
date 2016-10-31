@@ -9,6 +9,8 @@ using System.Windows.Input;
 using FirstFloor.ModernUI.Presentation;
 using System;
 using Prism.Commands;
+using CefSharp;
+using SuperRocket.ModuleOne.ResourceHandler;
 
 namespace SuperRocket.ModuleOne.ViewModels
 {
@@ -52,7 +54,6 @@ namespace SuperRocket.ModuleOne.ViewModels
             Customers.AddRange(service.GetAllCustomers().OrderBy(c => c.FirstName));
 
             WebBrowser = manager.CreateBrowser();
-
             Address = "local://Resource/Modules/Example/Default.html";
             Title = "This is a module for Super Rocket";
 

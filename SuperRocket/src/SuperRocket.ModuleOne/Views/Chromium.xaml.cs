@@ -17,15 +17,6 @@ namespace SuperRocket.ModuleOne.Views
         public Chromium()
         {
             InitializeComponent();
-            InitializeBrowser();
-        }
-
-       
-        private void InitializeBrowser()
-        {
-            var browser =  new ChromiumWebBrowser();
-
-            chromiumContainer.Children.Insert(0, browser);
         }
     }
 }

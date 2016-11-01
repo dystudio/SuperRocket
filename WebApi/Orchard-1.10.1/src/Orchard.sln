@@ -298,6 +298,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.Orchard.Authentic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoNerdy.NHProf", "Orchard.Web\Modules\SoNerdy.NHProf\SoNerdy.NHProf.csproj", "{D793F2E8-C541-46FC-96B0-D9E099ACDADA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchard.OData", "Orchard.Web\Modules\Orchard.OData\Orchard.OData.csproj", "{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeCoverage|Any CPU = CodeCoverage|Any CPU
@@ -1813,6 +1815,22 @@ Global
 		{D793F2E8-C541-46FC-96B0-D9E099ACDADA}.Staging AR|Any CPU.Build.0 = Release|Any CPU
 		{D793F2E8-C541-46FC-96B0-D9E099ACDADA}.Staging|Any CPU.ActiveCfg = Release|Any CPU
 		{D793F2E8-C541-46FC-96B0-D9E099ACDADA}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.CodeCoverage|Any CPU.Build.0 = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Coverage|Any CPU.Build.0 = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.FxCop|Any CPU.Build.0 = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Staging AR|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Staging AR|Any CPU.Build.0 = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1911,6 +1929,7 @@ Global
 		{B00E7D16-CCCB-4030-95D6-26BBD7E5A810} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{41A5F3AF-C7AC-473C-8780-5163AA8D5C77} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{D793F2E8-C541-46FC-96B0-D9E099ACDADA} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
+		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4

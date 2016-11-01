@@ -1,0 +1,13 @@
+﻿Name: ESO WIF Authentication
+AntiForgery: enabled
+Author: Accenture
+Website: http://www.accenture.com
+Version: 2.0
+OrchardVersion: 1.9.2
+Description: Overrides default authentication by using the currently logged in active directory user or Claims identity by converting it to Enterprise Indentity.
+Category: Authentication
+Features:
+    Accenture.Orchard.Authentication:
+        Name: ESO WIF Authentication
+        Description: Overrides default authentication by using the currently logged in active directory user or Claims identity by converting it to Enterprise Indentity.
+        Dependencies: Orchard.Users, Orchard.Roles, Orchard.jQuery

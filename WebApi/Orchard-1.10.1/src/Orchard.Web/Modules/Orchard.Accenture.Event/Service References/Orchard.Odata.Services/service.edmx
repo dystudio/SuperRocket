@@ -1,0 +1,632 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="Orchard.OData" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Page">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="PublishLaterPart" Type="Orchard.OData.PublishLaterPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+        <Property Name="AutoroutePart" Type="Orchard.OData.AutoroutePart" />
+        <Property Name="LayoutPart" Type="Orchard.OData.LayoutPart" />
+        <Property Name="TagsPart" Type="Orchard.OData.TagsPart" />
+        <Property Name="LocalizationPart" Type="Orchard.OData.LocalizationPart" />
+        <Property Name="MenuPart" Type="Orchard.OData.MenuPart" />
+      </EntityType>
+      <ComplexType Name="CommonPart">
+        <Property Name="CreatedUtc" Type="Edm.DateTime" />
+        <Property Name="PublishedUtc" Type="Edm.DateTime" />
+        <Property Name="ModifiedUtc" Type="Edm.DateTime" />
+        <Property Name="VersionCreatedUtc" Type="Edm.DateTime" />
+        <Property Name="VersionPublishedUtc" Type="Edm.DateTime" />
+        <Property Name="VersionModifiedUtc" Type="Edm.DateTime" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="PublishLaterPart">
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="TitlePart">
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="AutoroutePart">
+        <Property Name="CustomPattern" Type="Edm.String" />
+        <Property Name="UseCustomPattern" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayAlias" Type="Edm.String" />
+        <Property Name="Path" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="LayoutPart">
+        <Property Name="SessionKey" Type="Edm.String" />
+        <Property Name="LayoutData" Type="Edm.String" />
+        <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TemplateId" Type="Edm.Int32" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="TagsPart">
+        <Property Name="CurrentTags" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="LocalizationPart">
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="MenuPart">
+        <Property Name="MenuText" Type="Edm.String" />
+        <Property Name="MenuPosition" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="Image">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IdentityPart" Type="Orchard.OData.IdentityPart" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="MediaPart" Type="Orchard.OData.MediaPart" />
+        <Property Name="ImagePart" Type="Orchard.OData.ImagePart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="IdentityPart">
+        <Property Name="Identifier" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="MediaPart">
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="MimeType" Type="Edm.String" />
+        <Property Name="Caption" Type="Edm.String" />
+        <Property Name="AlternateText" Type="Edm.String" />
+        <Property Name="FolderPath" Type="Edm.String" />
+        <Property Name="FileName" Type="Edm.String" />
+        <Property Name="MediaUrl" Type="Edm.String" />
+        <Property Name="LogicalType" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ImagePart">
+        <Property Name="Width" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Height" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentLayout" Type="Orchard.OData.DocumentLayout" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="AutoDownload" Type="Orchard.OData.AutoDownload" />
+      </ComplexType>
+      <ComplexType Name="DocumentLayout">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="TermPart" Type="Collection(Orchard.OData.TermPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="TermPart">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Slug" Type="Edm.String" />
+        <Property Name="TaxonomyId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Path" Type="Edm.String" />
+        <Property Name="Count" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Selectable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Weight" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FullPath" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="EventPicker">
+        <Property Name="Ids" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="Items" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ADGroup">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="TermPart" Type="Collection(Orchard.OData.TermPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="CoverImage">
+        <Property Name="Ids" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="FirstMediaUrl" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="MediaPart" Type="Collection(Orchard.OData.MediaPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="AutoDownload">
+        <Property Name="Value" Type="Edm.Boolean" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="VectorImage">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IdentityPart" Type="Orchard.OData.IdentityPart" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="MediaPart" Type="Orchard.OData.MediaPart" />
+        <Property Name="VectorImagePart" Type="Orchard.OData.VectorImagePart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="VectorImagePart">
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentLayout" Type="Orchard.OData.DocumentLayout" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="AutoDownload" Type="Orchard.OData.AutoDownload" />
+      </ComplexType>
+      <EntityType Name="Video">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IdentityPart" Type="Orchard.OData.IdentityPart" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="MediaPart" Type="Orchard.OData.MediaPart" />
+        <Property Name="VideoPart" Type="Orchard.OData.VideoPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="VideoPart">
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentLayout" Type="Orchard.OData.DocumentLayout" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="AutoDownload" Type="Orchard.OData.AutoDownload" />
+      </ComplexType>
+      <EntityType Name="Audio">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IdentityPart" Type="Orchard.OData.IdentityPart" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="MediaPart" Type="Orchard.OData.MediaPart" />
+        <Property Name="AudioPart" Type="Orchard.OData.AudioPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="AudioPart">
+        <Property Name="Length" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentLayout" Type="Orchard.OData.DocumentLayout" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="AutoDownload" Type="Orchard.OData.AutoDownload" />
+      </ComplexType>
+      <EntityType Name="Document">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IdentityPart" Type="Orchard.OData.IdentityPart" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="MediaPart" Type="Orchard.OData.MediaPart" />
+        <Property Name="DocumentPart" Type="Orchard.OData.DocumentPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="DocumentPart">
+        <Property Name="Length" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentLayout" Type="Orchard.OData.DocumentLayout" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="AutoDownload" Type="Orchard.OData.AutoDownload" />
+      </ComplexType>
+      <EntityType Name="OEmbed">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IdentityPart" Type="Orchard.OData.IdentityPart" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="MediaPart" Type="Orchard.OData.MediaPart" />
+        <Property Name="OEmbedPart" Type="Orchard.OData.OEmbedPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="OEmbedPart">
+        <Property Name="Item" Type="Edm.String" />
+        <Property Name="Source" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocumentLayout" Type="Orchard.OData.DocumentLayout" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="AutoDownload" Type="Orchard.OData.AutoDownload" />
+      </ComplexType>
+      <EntityType Name="ProjectionPage">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+        <Property Name="AutoroutePart" Type="Orchard.OData.AutoroutePart" />
+        <Property Name="MenuPart" Type="Orchard.OData.MenuPart" />
+        <Property Name="ProjectionPart" Type="Orchard.OData.ProjectionPart" />
+        <Property Name="AdminMenuPart" Type="Orchard.OData.AdminMenuPart" />
+      </EntityType>
+      <ComplexType Name="ProjectionPart">
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="AdminMenuPart">
+        <Property Name="OnAdminMenu" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AdminMenuText" Type="Edm.String" />
+        <Property Name="AdminMenuPosition" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="Circle">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="CirclePart" Type="Orchard.OData.CirclePart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="CirclePart">
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="AnotherCircleId" Type="Edm.String" />
+        <Property Name="AnotherCircleGUID" Type="Edm.String" />
+        <Property Name="EventPickerIds" Type="Edm.String" />
+        <Property Name="AdGroups" Type="Edm.String" />
+        <Property Name="CircleIsPublished" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CircleIsLatest" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="WorkCircleId" Type="Orchard.OData.WorkCircleId" />
+        <Property Name="WorkCircleGUID" Type="Orchard.OData.WorkCircleGUID" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+      </ComplexType>
+      <ComplexType Name="WorkCircleId">
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="WorkCircleGUID">
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="InfoCard">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="InfoCardPart" Type="Orchard.OData.InfoCardPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="InfoCardPart">
+        <Property Name="HotelName" Type="Edm.String" />
+        <Property Name="HotelAddress" Type="Edm.String" />
+        <Property Name="WebSite" Type="Edm.String" />
+        <Property Name="Telphone" Type="Edm.String" />
+        <Property Name="ExtNumber" Type="Edm.String" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="CardStartDate" Type="Edm.String" />
+        <Property Name="CardEndDate" Type="Edm.String" />
+        <Property Name="CardCoverImageUrl" Type="Edm.String" />
+        <Property Name="EventPickerIds" Type="Edm.String" />
+        <Property Name="InfoCardIsPublished" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="InfoCardIsLatest" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StartDate" Type="Orchard.OData.StartDate" />
+        <Property Name="EndDate" Type="Orchard.OData.EndDate" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+      </ComplexType>
+      <ComplexType Name="StartDate">
+        <Property Name="DateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="EndDate">
+        <Property Name="DateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="Participant">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+        <Property Name="AutoroutePart" Type="Orchard.OData.AutoroutePart" />
+        <Property Name="BodyPart" Type="Orchard.OData.BodyPart" />
+        <Property Name="ParticipantPart" Type="Orchard.OData.ParticipantPart" />
+        <Property Name="TagsPart" Type="Orchard.OData.TagsPart" />
+      </EntityType>
+      <ComplexType Name="BodyPart">
+        <Property Name="Text" Type="Edm.String" />
+        <Property Name="Format" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ParticipantPart">
+        <Property Name="EnterpriseId" Type="Edm.String" />
+        <Property Name="PeopleKey" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="Avatar" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="Phone" Type="Edm.String" />
+        <Property Name="WorkPhone" Type="Edm.String" />
+        <Property Name="ExtendNumber" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="TalentSegment" Type="Edm.String" />
+        <Property Name="CareerTrack" Type="Edm.String" />
+        <Property Name="CareerLevel" Type="Edm.String" />
+        <Property Name="DomainSpecialty" Type="Edm.String" />
+        <Property Name="IndustrySpecialty" Type="Edm.String" />
+        <Property Name="FirstSecondarySpecialty" Type="Edm.String" />
+        <Property Name="SecondSecondarySpecialty" Type="Edm.String" />
+        <Property Name="StandardJobCode" Type="Edm.String" />
+        <Property Name="CurrentLocation" Type="Edm.String" />
+        <Property Name="Timezone" Type="Edm.String" />
+        <Property Name="ActiveProjects" Type="Edm.String" />
+        <Property Name="CurrentClient" Type="Edm.String" />
+        <Property Name="OrgLevel2Desc" Type="Edm.String" />
+        <Property Name="EventIds" Type="Edm.String" />
+        <Property Name="ParticipantLayoutFullPath" Type="Edm.String" />
+        <Property Name="ProfessionalBio" Type="Edm.String" />
+        <Property Name="MediaUrl" Type="Edm.String" />
+        <Property Name="ParticipantIsPublished" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ParticipantIsLatest" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ParticipantLayout" Type="Orchard.OData.ParticipantLayout" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="ParticipantAvatar" Type="Orchard.OData.ParticipantAvatar" />
+      </ComplexType>
+      <ComplexType Name="ParticipantLayout">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="TermPart" Type="Collection(Orchard.OData.TermPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ParticipantAvatar">
+        <Property Name="Ids" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="FirstMediaUrl" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="MediaPart" Type="Collection(Orchard.OData.MediaPart)" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="Session">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+        <Property Name="AutoroutePart" Type="Orchard.OData.AutoroutePart" />
+        <Property Name="BodyPart" Type="Orchard.OData.BodyPart" />
+        <Property Name="SessionPart" Type="Orchard.OData.SessionPart" />
+        <Property Name="TagsPart" Type="Orchard.OData.TagsPart" />
+      </EntityType>
+      <ComplexType Name="SessionPart">
+        <Property Name="AgendaTitle" Type="Edm.String" />
+        <Property Name="AgendaStartTime" Type="Edm.String" />
+        <Property Name="AgendaEndTime" Type="Edm.String" />
+        <Property Name="AgendaType" Type="Edm.String" />
+        <Property Name="AgendaCategory" Type="Edm.String" />
+        <Property Name="AgendaADGroups" Type="Edm.String" />
+        <Property Name="AgendaFullDescription" Type="Edm.String" />
+        <Property Name="AgendaPresenterPickerIds" Type="Edm.String" />
+        <Property Name="AgendaEventPickerIds" Type="Edm.String" />
+        <Property Name="SessionIsPublished" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SessionIsLatest" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StartTime" Type="Orchard.OData.StartTime" />
+        <Property Name="EndTime" Type="Orchard.OData.EndTime" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+        <Property Name="SessionType" Type="Orchard.OData.SessionType" />
+        <Property Name="SessionCategory" Type="Orchard.OData.SessionCategory" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+      </ComplexType>
+      <ComplexType Name="StartTime">
+        <Property Name="DateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="EndTime">
+        <Property Name="DateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SessionType">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="TermPart" Type="Collection(Orchard.OData.TermPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SessionCategory">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="TermPart" Type="Collection(Orchard.OData.TermPart)" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="Event">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+        <Property Name="AutoroutePart" Type="Orchard.OData.AutoroutePart" />
+        <Property Name="EventPart" Type="Orchard.OData.EventPart" />
+        <Property Name="TagsPart" Type="Orchard.OData.TagsPart" />
+        <Property Name="PublishLaterPart" Type="Orchard.OData.PublishLaterPart" />
+      </EntityType>
+      <ComplexType Name="EventPart">
+        <Property Name="StartDate" Type="Edm.String" />
+        <Property Name="EndDate" Type="Edm.String" />
+        <Property Name="Location" Type="Edm.String" />
+        <Property Name="LocationDescription" Type="Edm.String" />
+        <Property Name="IntroduceVideoPlayer" Type="Edm.String" />
+        <Property Name="IntroduceVideoSubject" Type="Edm.String" />
+        <Property Name="IntroduceVideoDescription" Type="Edm.String" />
+        <Property Name="SubTitle" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="CircleID" Type="Edm.String" />
+        <Property Name="CircleGUID" Type="Edm.String" />
+        <Property Name="EventTitle" Type="Edm.String" />
+        <Property Name="AppPickerIds" Type="Edm.String" />
+        <Property Name="ADGroups" Type="Edm.String" />
+        <Property Name="CoverImageUrl" Type="Edm.String" />
+        <Property Name="VideoCoverImageUrl" Type="Edm.String" />
+        <Property Name="SkincssUrl" Type="Edm.String" />
+        <Property Name="ParticipantLayoutFullPath" Type="Edm.String" />
+        <Property Name="DocumentLayoutFullPath" Type="Edm.String" />
+        <Property Name="ContactPickerIds" Type="Edm.String" />
+        <Property Name="EventIsPublished" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EventIsLatest" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EventSkinFile" Type="Orchard.OData.EventSkinFile" />
+        <Property Name="VideoCoverImage" Type="Orchard.OData.VideoCoverImage" />
+        <Property Name="CoverImage" Type="Orchard.OData.CoverImage" />
+        <Property Name="AppPicker" Type="Orchard.OData.AppPicker" />
+        <Property Name="ADGroup" Type="Orchard.OData.ADGroup" />
+        <Property Name="ParticipantLayout" Type="Orchard.OData.ParticipantLayout" />
+        <Property Name="DocumentLayout" Type="Orchard.OData.DocumentLayout" />
+      </ComplexType>
+      <ComplexType Name="EventSkinFile">
+        <Property Name="Ids" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="FirstMediaUrl" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="MediaPart" Type="Collection(Orchard.OData.MediaPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="VideoCoverImage">
+        <Property Name="Ids" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="FirstMediaUrl" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="MediaPart" Type="Collection(Orchard.OData.MediaPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="AppPicker">
+        <Property Name="Ids" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="Items" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="App">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+        <Property Name="AutoroutePart" Type="Orchard.OData.AutoroutePart" />
+        <Property Name="AppPart" Type="Orchard.OData.AppPart" />
+        <Property Name="BodyPart" Type="Orchard.OData.BodyPart" />
+        <Property Name="TagsPart" Type="Orchard.OData.TagsPart" />
+        <Property Name="ContentPermissionsPart" Type="Orchard.OData.ContentPermissionsPart" />
+      </EntityType>
+      <ComplexType Name="AppPart">
+        <Property Name="WelcomeVideoLink" Type="Edm.String" />
+        <Property Name="WelcomeTitle" Type="Edm.String" />
+        <Property Name="DescriptionContext" Type="Edm.String" />
+        <Property Name="MachineName" Type="Edm.String" />
+        <Property Name="Message" Type="Edm.String" />
+        <Property Name="AcceptText" Type="Edm.String" />
+        <Property Name="DisagreeText" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AppWelcomeVideoCoverImage" Type="Orchard.OData.AppWelcomeVideoCoverImage" />
+        <Property Name="DateFormat" Type="Orchard.OData.DateFormat" />
+      </ComplexType>
+      <ComplexType Name="AppWelcomeVideoCoverImage">
+        <Property Name="Ids" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="FirstMediaUrl" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="MediaPart" Type="Collection(Orchard.OData.MediaPart)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="DateFormat">
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="SelectedValues" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ContentPermissionsPart">
+        <Property Name="Enabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ViewContent" Type="Edm.String" />
+        <Property Name="ViewOwnContent" Type="Edm.String" />
+        <Property Name="PublishContent" Type="Edm.String" />
+        <Property Name="PublishOwnContent" Type="Edm.String" />
+        <Property Name="EditContent" Type="Edm.String" />
+        <Property Name="EditOwnContent" Type="Edm.String" />
+        <Property Name="DeleteContent" Type="Edm.String" />
+        <Property Name="DeleteOwnContent" Type="Edm.String" />
+        <Property Name="PreviewContent" Type="Edm.String" />
+        <Property Name="PreviewOwnContent" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="Poll">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="PollPart" Type="Orchard.OData.PollPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="PollPart">
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Orchard.OData.Description" />
+        <Property Name="AllowAnonymousUser" Type="Orchard.OData.AllowAnonymousUser" />
+        <Property Name="PollLinked" Type="Orchard.OData.PollLinked" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+      </ComplexType>
+      <ComplexType Name="Description">
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="AllowAnonymousUser">
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="PollLinked">
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="Evaluation">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommonPart" Type="Orchard.OData.CommonPart" />
+        <Property Name="EvaluationPart" Type="Orchard.OData.EvaluationPart" />
+        <Property Name="TitlePart" Type="Orchard.OData.TitlePart" />
+      </EntityType>
+      <ComplexType Name="EvaluationPart">
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Orchard.OData.Description" />
+        <Property Name="QuickSurveyLinked" Type="Orchard.OData.QuickSurveyLinked" />
+        <Property Name="EventPicker" Type="Orchard.OData.EventPicker" />
+      </ComplexType>
+      <ComplexType Name="QuickSurveyLinked">
+        <Property Name="Value" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
+      <EntityContainer Name="OrchardOData" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Pages" EntityType="Orchard.OData.Page" />
+        <EntitySet Name="Images" EntityType="Orchard.OData.Image" />
+        <EntitySet Name="VectorImages" EntityType="Orchard.OData.VectorImage" />
+        <EntitySet Name="Videos" EntityType="Orchard.OData.Video" />
+        <EntitySet Name="Audios" EntityType="Orchard.OData.Audio" />
+        <EntitySet Name="Documents" EntityType="Orchard.OData.Document" />
+        <EntitySet Name="OEmbeds" EntityType="Orchard.OData.OEmbed" />
+        <EntitySet Name="ProjectionPages" EntityType="Orchard.OData.ProjectionPage" />
+        <EntitySet Name="Circles" EntityType="Orchard.OData.Circle" />
+        <EntitySet Name="InfoCards" EntityType="Orchard.OData.InfoCard" />
+        <EntitySet Name="Participants" EntityType="Orchard.OData.Participant" />
+        <EntitySet Name="Sessions" EntityType="Orchard.OData.Session" />
+        <EntitySet Name="Events" EntityType="Orchard.OData.Event" />
+        <EntitySet Name="Apps" EntityType="Orchard.OData.App" />
+        <EntitySet Name="Polls" EntityType="Orchard.OData.Poll" />
+        <EntitySet Name="Evaluations" EntityType="Orchard.OData.Evaluation" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

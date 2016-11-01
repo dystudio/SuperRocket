@@ -1,0 +1,54 @@
+@model Orchard.Accenture.Event.ViewModels.SessionEditorViewModel
+@using Orchard.Accenture.Event.Models;
+@using Orchard.Mvc.Html;
+@using Orchard.Utility.Extensions;
+
+@{   
+    Layout.Title = T("Create a Session").ToString();
+}
+
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Session.AgendaPresenterPickerIds)">@T("Presenter Enterprise Id")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Session.AgendaPresenterPickerIds, new { @class = "text-medium" })
+    <a id="btnLoadProfile" name="btnLoadProfile" class="button primaryAction" value="">@T("Search")</a>
+    <img id="loading" style="display:none" height="20" width="20" src='@Url.Content("~/Modules/Orchard.Accenture.Event/Content/images/loading.gif")' />
+    <a id="Message"></a>
+    <br />
+    @T("For multiple presenters, please use a comma (,) to separate names. (Example: jane.doe, john.smith) Names must already exist in Orchard.")
+</fieldset>
+@using (Script.Foot())
+{
+    <script type="text/javascript">
+//<![CDATA[
+    $(function () {
+        $("#btnLoadProfile").click(function () {
+            var eid = $('#Orchard_Accenture_Event_Session_Session_AgendaPresenterPickerIds').val();
+            if (!eid) {
+                alert("Please fill Enterprise ID");
+                return;
+            }
+            $.ajax({
+                url: '../../../api/People/LoadMultipleParticipants?eid=' + eid,
+                type: 'GET',
+                beforeSend: function(){
+                    $('#loading').show();
+                },
+                complete: function(){
+                    $('#loading').hide();
+                },
+                success: function (data) {
+                    if (data.Count > 0) {
+                        $('#Message').text("");
+                        $('#Message').append(data.Result);
+                    } else {
+                        $('#Message').text("");
+                        $('#Message').append("OK");
+                    }
+                }
+            });
+        });
+    })
+    //]]>
+    </script>
+}

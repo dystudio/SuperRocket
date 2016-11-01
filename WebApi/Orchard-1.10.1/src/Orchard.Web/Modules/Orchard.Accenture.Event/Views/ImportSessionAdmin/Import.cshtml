@@ -1,0 +1,54 @@
+﻿@model Orchard.Accenture.Event.ViewModels.ImportSessionViewModel
+@{
+    var events = Model.Events;
+    var currentId = Model.CurrentEventId;
+    var owner = Model.Owner;
+}
+@{
+    Layout.Title = T("Import Session").ToString();
+
+    using (Html.BeginFormAntiForgeryPost(Url.Action("Import", new { area = "Orchard.Accenture.Event" }), FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary();
+    <hr />
+    <fieldset>
+        <a href='@Url.Content("~/Modules/Orchard.Accenture.Event/Content/template/Agenda_template.xlsx")' target="_self">@T("Download Session Template")</a>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <label>@T("Event Picker")</label>
+        <select name="event-picker">
+            @foreach (var item in events)
+            {
+                if (!((((dynamic)item).VersionRecord != null)
+                    && ((((dynamic)item).VersionRecord.Published == false)
+                    || (((dynamic)item).VersionRecord.Published && ((dynamic)item).VersionRecord.Latest == false))))
+                {
+                    if (((dynamic)item).Id == currentId)
+                    {
+                        <option selected value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                    }
+                    else
+                    {
+                        <option value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                    }
+                }
+            }
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="SessionFile">@T("Session File:")</label>
+        <input type="file" id="SessionFile" size="64" name="SessionFile" value="Browse..." />
+    </fieldset>
+
+    <fieldset>
+        <label for="@Html.Id("owner")">@T("Change ownership of imported sessions to delegated user account:")</label>
+        <span>@Html.TextBox("owner", owner, new { @class = "text-medium" })</span>
+    </fieldset>
+    <fieldset>
+        @T("Note: Leave blank to keep ownership.")
+    </fieldset>
+
+    <button type="submit" class="primaryAction">@T("Import")</button>
+    }
+}

@@ -1,0 +1,40 @@
+@model Orchard.Accenture.Event.ViewModels.AppViewModel
+@using Orchard.Accenture.Event.Models;
+@using Orchard.Mvc.Html;
+@using Orchard.Utility.Extensions;
+
+
+@*<fieldset>
+    <label for="@Html.IdFor(m => m.App.ClientId)">@T("Client Id")</label>
+    <span>@Html.TextBoxFor(m => m.App.ClientId, new { @class = "text-medium" })</span>
+    @T("Please provide Client Id for the mobile app, or the client app could not access the api.")
+</fieldset>*@
+<fieldset>
+    <label for="@Html.IdFor(m => m.App.WelcomeVideoLink)">@T("Welcome Video Link")</label>
+    <span >@Html.TextBoxFor(m => m.App.WelcomeVideoLink, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.App.WelcomeTitle)">@T("Welcome Title")</label>
+    <span>@Html.TextBoxFor(m => m.App.WelcomeTitle, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.App.DescriptionContext)">@T("Description Context")</label>
+    <br />
+    @Html.TextAreaFor(m => m.App.DescriptionContext, new { @class = "text large", rows = "5" })
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.App.MachineName)">@T("Machine Name")</label>
+    <span>@Html.TextBoxFor(m => m.App.MachineName, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.App.Message)">@T("Message")</label>
+    <span>@Html.TextBoxFor(m => m.App.Message, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.App.AcceptText)">@T("Accept Text")</label>
+    <span>@Html.TextBoxFor(m => m.App.AcceptText, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.App.DisagreeText)">@T("Disagree Text")</label>
+    <span>@Html.TextBoxFor(m => m.App.DisagreeText, new { @class = "text-medium" })</span>
+</fieldset>

@@ -1,0 +1,4 @@
+﻿img[src^="https://people.accenture.com"],img[src^="https://portal.accenture.com"]
+{
+    visibility: hidden;
+}

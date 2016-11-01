@@ -1,0 +1,46 @@
+﻿@model Orchard.Accenture.Event.ViewModels.DeleteParticipantViewModel
+
+@{
+    var currentId = Model.CurrentEventId;
+    var events = Model.Events;
+}
+
+@{
+    Layout.Title = T("Delete Participant").ToString();
+
+    using (Html.BeginFormAntiForgeryPost(Url.Action("Delete", new { area = "Orchard.Accenture.Event" }), FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary();
+    
+    <hr />    
+    <fieldset>
+        <a href='@Url.Content("~/Modules/Orchard.Accenture.Event/Content/template/Participant_delete_template.xlsx")' target="_self">@T("Download Participant Delete Template")</a>
+    </fieldset>    
+    <hr />    
+    <fieldset>
+        <label>@T("Event Picker")</label>
+        <select name="event-picker">
+            @foreach (var item in events)
+            {
+                if (!((((dynamic)item).VersionRecord != null) && ((((dynamic)item).VersionRecord.Published == false)
+                    || (((dynamic)item).VersionRecord.Published && ((dynamic)item).VersionRecord.Latest == false))))
+                {
+                    if (((dynamic)item).Id == currentId)
+                    {
+                        <option selected value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                    }
+                    else
+                    {
+                        <option value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                    }
+                }
+            }
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="SessionFile">@T("New Participant File:")</label>
+        <input type="file" id="ParticipantFile" size="64" name="ParticipantFile" value="Browse..." />
+    </fieldset>
+    <button type="submit" class="primaryAction">@T("Delete")</button>
+    }
+}

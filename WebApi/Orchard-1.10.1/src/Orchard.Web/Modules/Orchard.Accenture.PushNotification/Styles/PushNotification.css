@@ -1,0 +1,35 @@
+﻿#main .login-form .parent .text-medium,
+#main .login-form .parent .text-people {
+    width: 90%;
+}
+.login-form .parent {
+    padding-left: 50px;
+}
+.login-form .child {
+    padding-left: 70px;
+}
+.login-form .notify {
+     float:left;      
+     padding-right:50px;
+}
+.login-form .clear {
+    clear:both;
+}
+.login-form .title {
+    margin-top:20px;
+}
+.login-form #EventsPicker {
+    width: auto;
+}
+.login-form select {
+    width: 150px;
+}
+.login-form input:disabled, 
+.login-form selected:disabled, 
+.login-form textarea:disabled {
+    background-color: #D3D3D3;
+}
+.zone-content button.primaryAction:disabled {
+    background: #818181;
+}
+

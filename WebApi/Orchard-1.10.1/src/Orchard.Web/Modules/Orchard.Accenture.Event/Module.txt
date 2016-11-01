@@ -1,0 +1,14 @@
+Name: Orchard Event
+AntiForgery: enabled
+Author: MicroExperience Orchard Team
+Website: http://www.accenture.com
+Version: 1.9
+OrchardVersion: 1.9
+Description: This is an event module.
+Dependencies: 
+Features:
+    Orchard.Accenture.Event:
+        Name: Orchard.Accenture.Event
+		Description: This is an event module.
+		Category: Accenture Orchard Module
+		Dependencies: Orchard.jQuery, Successful.Bootstrap, Orchard.Taxonomies, Orchard.OData, Dolph.SmartContentPicker, Orchard.ContentPermissions

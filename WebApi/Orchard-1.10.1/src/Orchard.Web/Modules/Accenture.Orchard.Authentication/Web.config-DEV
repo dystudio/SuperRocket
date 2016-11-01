@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="system.web.webPages.razor" type="System.Web.WebPages.Razor.Configuration.RazorWebSectionGroup, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+      <remove name="host"/>
+      <remove name="pages"/>
+      <section name="host" type="System.Web.WebPages.Razor.Configuration.HostSection, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false"/>
+      <section name="pages" type="System.Web.WebPages.Razor.Configuration.RazorPagesSection, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false"/>
+    </sectionGroup>
+    <section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+    <section name="system.identityModel.services" type="System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+    <section name="securitySessionConfiguration" type="Thinktecture.IdentityModel.Web.Configuration.SecuritySessionSection, Thinktecture.IdentityModel"/>
+  </configSections>
+  <system.web.webPages.razor>
+    <host factoryType="System.Web.Mvc.MvcWebRazorHostFactory, System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+    <pages pageBaseType="Orchard.Mvc.ViewEngines.Razor.WebViewPage">
+      <namespaces>
+        <add namespace="System.Web.Mvc"/>
+        <add namespace="System.Web.Mvc.Ajax"/>
+        <add namespace="System.Web.Mvc.Html"/>
+        <add namespace="System.Web.Routing"/>
+        <add namespace="System.Web.WebPages"/>
+        <add namespace="System.Linq"/>
+        <add namespace="System.Collections.Generic"/>
+        <add namespace="Orchard.Mvc.Html"/>
+      </namespaces>
+    </pages>
+  </system.web.webPages.razor>
+  <!--
+    For a description of web.config changes see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.5.1" />
+      </system.Web>
+  -->
+  <system.web>
+    <compilation targetFramework="4.5.1">
+      <assemblies>
+        <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+        <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+        <add assembly="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+        <add assembly="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+      </assemblies>
+    </compilation>
+    <authorization>
+      <deny users="?"/>
+    </authorization>
+  </system.web>
+  <securitySessionConfiguration cacheSessionsOnServer="false" sessionTokenCacheType="" useMackineKeyProtectionForSessionTokens="true" defaultSessionDuration="00:00:00" persistentSessionDuration="00:00:00" enableSlidingSessionExpirations="false" overrideWSFedTokenLifetime="false" suppressLoginRedirectsForApiCalls="true" suppressSecurityTokenExceptions="true"/>
+  <system.identityModel>
+    <identityConfiguration saveBootstrapContext="true">
+      <audienceUris>
+        <add value="https://myevents.ciodev.accenture.com" />
+      </audienceUris>
+      <certificateValidation certificateValidationMode="None"></certificateValidation>
+      <issuerNameRegistry type="Thinktecture.IdentityModel.Tokens.CachingMetadataBasedIssuerNameRegistry, Thinktecture.IdentityModel">
+        <trustedIssuerMetadata issuerName="urn:federation:accenture:stage" metadataAddress="https://federation-sts-stage.accenture.com/FederationMetadata/2007-06/FederationMetadata.xml"></trustedIssuerMetadata>
+        <metadataCache cacheDuration="30" protect="true" cacheType="Thinktecture.IdentityModel.Tokens.FileBasedMetadataCache, Thinktecture.IdentityModel">
+          <file path="c:\cache.xml"></file>
+        </metadataCache>
+      </issuerNameRegistry>
+
+    </identityConfiguration>
+  </system.identityModel>
+
+  <system.identityModel.services>
+    <federationConfiguration>
+      <cookieHandler requireSsl="true"></cookieHandler>
+      <wsFederation requireHttps="true"
+            passiveRedirectEnabled="true"
+            realm="https://myevents.ciodev.accenture.com"
+            issuer="https://federation-sts-stage.accenture.com/adfs/ls"
+	  />
+    </federationConfiguration>
+  </system.identityModel.services>
+  <system.webServer>
+    <modules>
+      <remove name="FormsAuthentication"/>
+      <add name="SessionAuthenticationModule" preCondition="managed" type="System.IdentityModel.Services.SessionAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+      <add name="WSFederationAuthenticationModule" preCondition="managed" type="System.IdentityModel.Services.WSFederationAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+    </modules>
+  </system.webServer>
+</configuration>

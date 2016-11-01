@@ -1,0 +1,52 @@
+@using Orchard.Accenture.Event.ViewModels;
+@{
+    var pageTitle = T("Manage InfoCards");
+    var createLinkText = T("New InfoCard");
+    Layout.Title = pageTitle;
+}
+
+@using (Html.BeginFormAntiForgeryPost())
+{
+    <fieldset class="bulk-actions">
+        <label for="orderResults" class="bulk-order">@T("Ordered by")</label>
+        <select id="orderResults" name="Options.OrderBy">
+            @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Created, T("recently created").Text)
+            @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Modified, T("recently modified").Text)
+        </select>
+        <button type="submit" name="submit.Filter" value="yes please">@T("Apply")</button>
+    </fieldset>
+
+    <div class="manage">
+        @if (Model.IsSiteOwner)
+        {
+            <fieldset class="bulk-actions">
+                <label for="orderResults" class="bulk-order">@T("Owner")</label>
+                <select id="orderResults" name="Options.Owner">
+                    @foreach (var userEntry in Model.Users)
+                    {
+                        if (userEntry.User.UserName == Model.Options.Owner)
+                        {
+                            <option selected value="@userEntry.User.Id">@userEntry.User.UserName</option>
+                        }
+                        else
+                        {
+                            <option value="@userEntry.User.Id">@userEntry.User.UserName</option>
+                        }
+                    }
+                </select>
+            </fieldset>
+        }
+
+        <fieldset class="bulk-actions">
+            <label for="search-text">@T("Search")</label>
+            @Html.TextBox("searchText", (string)Model.SearchText, new { @class = "text", autofocus = "autofocus" })
+            <button type="submit" name="submit.Filter" value="Search">@T("Search")</button>
+            @Html.ActionLink(createLinkText.Text, "Create", "Admin", new { Area = "Contents", Id = "InfoCard" }, new { @class = "button primaryAction" })
+        </fieldset>
+    </div>
+
+    <fieldset class="contentItems bulk-items">
+        @Display(Model.ContentItems)
+    </fieldset>
+    @Display(Model.Pager)
+}

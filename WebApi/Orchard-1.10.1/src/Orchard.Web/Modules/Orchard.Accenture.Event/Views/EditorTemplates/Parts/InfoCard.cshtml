@@ -1,0 +1,27 @@
+﻿@model Orchard.Accenture.Event.ViewModels.InfoCardViewModel
+@using Orchard.Accenture.Event.Models;
+@using Orchard.Mvc.Html;
+@using Orchard.Utility.Extensions;
+@{
+    Layout.Title = T("Create a InfoCard").ToString();
+}
+<fieldset>
+    <label for="@Html.IdFor(m => m.InfoCardPart.HotelName)">@T("Venue Name")</label>
+    <span>@Html.TextBoxFor(m => m.InfoCardPart.HotelName, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.InfoCardPart.HotelAddress)">@T("Venue Address")</label>
+    <span>@Html.TextBoxFor(m => m.InfoCardPart.HotelAddress, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.InfoCardPart.WebSite)">@T("Web Site")</label>
+    <span>@Html.TextBoxFor(m => m.InfoCardPart.WebSite, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.InfoCardPart.Telphone)">@T("Telphone")</label>
+    <span>@Html.TextBoxFor(m => m.InfoCardPart.Telphone, new { @class = "text-medium" })</span>
+</fieldset>
+<fieldset>
+    <label for="@Html.IdFor(m => m.InfoCardPart.ExtNumber)">@T("Extension Number")</label>
+    <span>@Html.TextBoxFor(m => m.InfoCardPart.ExtNumber, new { @class = "text-medium" })</span>
+</fieldset>

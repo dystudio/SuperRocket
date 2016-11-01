@@ -7,8 +7,15 @@ namespace Orchard.Roles.Models {
 
         internal LazyField<IList<string>> _roles = new LazyField<IList<string>>();
 
-        public IList<string> Roles {
+        //public IList<string> Roles {
+        //    get { return _roles.Value; }
+        //}
+
+        public IList<string> Roles
+        {
             get { return _roles.Value; }
+            set { _roles.Value = value; }
         }
+
     }
 }

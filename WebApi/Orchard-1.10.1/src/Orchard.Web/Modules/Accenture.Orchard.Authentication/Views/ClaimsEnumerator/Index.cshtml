@@ -1,0 +1,31 @@
+﻿@model Accenture.Orchard.Authentication.Models.ClaimsEnumerator
+@using Microsoft.IdentityModel.Claims;
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@T("Claims Enumerator").ToString();</title>
+    </head>
+    <body>
+        <table ID="tblClaims" style="border: 0px; border-spacing: 0px;
+            border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="border-style: solid;">Claim Type</th>
+                    <th style="border-style: solid;">Claim Value</th>
+                </tr>
+            </thead>
+            <tbody>
+        @if (Model.Claims != null)
+        {
+            foreach (Claim claim in Model.Claims)
+            {
+                <tr>
+                    <td>@claim.ClaimType</td>
+                    <td>@claim.Value</td>
+                </tr>
+            }
+        }
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+﻿﻿@model Orchard.Accenture.Event.Models.PeopleServiceSettingsPart
+
+<fieldset>
+    <legend>@T("People Service config")</legend>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.BaseUrl)" class="col-sm-2 control-label">@T("Base Url")</label>
+        <div class="col-sm-10">
+          @Html.TextBoxFor(m => m.BaseUrl, new { @class = "text-medium" }) 
+        </div>
+        @T("Please provide the base url for people service. Example: https://collabhub.accenture.com/")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.Domain)" class="col-sm-2 control-label">@T("Domain")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Domain, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the domain for people service. Example: dir")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.UserName)" class="col-sm-2 control-label">@T("User Name")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.UserName, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the UserName for people service. Example:3747_CareerExplorer")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.Password)" class="col-sm-2 control-label">@T("Password")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Password, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the Password for people service. Example: xxxxx")
+    </div>
+
+    <legend>@T("ESO config")</legend>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.Endpoint)" class="col-sm-2 control-label">@T("End Point")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Endpoint, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the url for ESO end point. Prod: https://federation-sts.accenture.com/services/jwt/issue/adfs , Stage: https://federation-sts-stage.accenture.com/services/jwt/issue/adfs")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.Scope)" class="col-sm-2 control-label">@T("Scope")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Scope, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the Scope. Example Prod: https://federation-sts.accenture.com/demo/api/ , Stage:https://federation-sts-stage.accenture.com/demo/api/")
+    </div>
+
+</fieldset>
+
+
+

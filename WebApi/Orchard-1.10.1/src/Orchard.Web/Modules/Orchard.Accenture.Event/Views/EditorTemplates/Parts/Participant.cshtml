@@ -1,0 +1,217 @@
+@model Orchard.Accenture.Event.ViewModels.ParticipantEditorViewModel
+@using Orchard.Accenture.Event.Models;
+@{
+//var title = Model.Id <= 0 ? T("Create") : T("Edit");
+}
+@{
+    Style.Require("jQueryUI");
+    Script.Require("jQuery");
+}
+<style>
+    .avatar-preview {
+        width:150px;
+        height:200px;
+        background-color:#e2dfdf;
+        border:solid;
+        border-color: darkgray;
+        border-width:1px;
+    }
+</style>
+<fieldset>
+    <label class="sub required" for="@Html.IdFor(m => m.Participant.EnterpriseId)">@T("Enterprise Id")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.EnterpriseId, new { @class = "text-medium" }) 
+     <a id="btnLoadProfile" name="btnLoadProfile" class="button primaryAction" value="">@T("Search and Auto Fill")</a>
+    <img id="loading" style="display:none" height="20" width="20" src='@Url.Content("~/Modules/Orchard.Accenture.Event/Content/images/loading.gif")'  />
+    <label id="duplicateParticipant" style="display:none; color:red"></label>
+    <span class="hint">Please enter name as first.m.last or first.last for both Accenture and non-Accenture users.  Do not include spaces.</span>
+</fieldset>
+<fieldset hidden>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.PeopleKey)">@T("PeopleKey")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.PeopleKey, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.DisplayName)">@T("Display Name")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.DisplayName, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.Avatar)">@T("Avatar")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.Avatar, new { @class = "text-medium" })
+    <br />
+    <label class="sub" >@T("Preview")</label>
+    <br />
+    <div id="avatar-preview" class="avatar-preview">
+        @{
+            if (!string.IsNullOrEmpty(Model.Participant.Avatar))
+            {
+                <img src="data:image/png;base64,@Model.Participant.Avatar" />
+            }
+        }
+    </div>
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.Email)">@T("Email")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.Email, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.Phone)">@T("Phone")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.Phone, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.WorkPhone)">@T("WorkPhone")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.WorkPhone, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.ExtendNumber)">@T("Ext Number")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.ExtendNumber, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.Country)">@T("Country")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.Country, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.City)">@T("City")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.City, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.TalentSegment)">@T("Talent Segment")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.TalentSegment, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.CareerTrack)">@T("Career Track")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.CareerTrack, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.CareerLevel)">@T("Career Level")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.CareerLevel, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.DomainSpecialty)">@T("Domain Specialty")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.DomainSpecialty, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.IndustrySpecialty)">@T("Industry Specialty")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.IndustrySpecialty, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.FirstSecondarySpecialty)">@T("First Secondary-Specialty")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.FirstSecondarySpecialty, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.SecondSecondarySpecialty)">@T("Second Secondary-Specialty")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.SecondSecondarySpecialty, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.StandardJobCode)">@T("StandardJobCode")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.StandardJobCode, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.CurrentLocation)">@T("Current Location")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.CurrentLocation, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.Timezone)">@T("Time Zone")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.Timezone, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.OrgLevel2Desc)">@T("OrgLevelDesc2")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.OrgLevel2Desc, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.ActiveProjects)">@T("Active Projects")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.ActiveProjects, new { @class = "text-medium" })
+</fieldset>
+<fieldset>
+    <label class="sub" for="@Html.IdFor(m => m.Participant.CurrentClient)">@T("Current Client")</label>
+    <br />
+    @Html.TextBoxFor(m => m.Participant.CurrentClient, new { @class = "text-medium" })
+</fieldset>
+@using (Script.Foot())
+{
+    <script type="text/javascript">
+//<![CDATA[
+    $(function () {
+        $("#btnLoadProfile").click(function () {
+            var eid = $('#Orchard_Accenture_Event_Participant_Participant_EnterpriseId').val();
+            if (!eid) {
+                alert("Please fill Enterprise ID");
+                return;
+            }
+            $.ajax({
+                url: '../../../api/People/LoadProfile?eid=' + eid,
+                type: 'GET',
+                beforeSend: function(){
+                    $('#loading').show();
+                },
+                complete: function(){
+                    $('#loading').hide();
+                },
+                success: function (data) {
+                    if (!data.Avatar) {
+                        var avatarPreview = "No Avatar Found";
+                        $('#avatar-preview').text("");
+                        $('#avatar-preview').append(avatarPreview);
+                    } else {
+                        var avatarPreview = '<img src=' + "data:image/png;base64," + data.Avatar + " '/>"
+                        $('#avatar-preview').text("");
+                        $('#avatar-preview').append(avatarPreview);
+                    }
+
+                    $('#Title_Title').val(eid);
+                    $('#Orchard_Accenture_Event_Participant_Participant_PeopleKey').val(data.PeopleKey);
+                    $('#Orchard_Accenture_Event_Participant_Participant_DisplayName').val(data.DisplayName);
+                    $('#Orchard_Accenture_Event_Participant_Participant_Avatar').val(data.Avatar);
+                    $('#Orchard_Accenture_Event_Participant_Participant_Email').val(data.Email);
+                    $('#Orchard_Accenture_Event_Participant_Participant_Phone').val(data.Phone);
+                    $('#Orchard_Accenture_Event_Participant_Participant_WorkPhone').val(data.WorkPhone);
+                    //$('#Orchard_Accenture_Event_Participant_Participant_ExtendNumber').val(data.Phone);
+                    $('#Orchard_Accenture_Event_Participant_Participant_Country').val(data.Country);
+                    $('#Orchard_Accenture_Event_Participant_Participant_City').val(data.City);
+                    $('#Orchard_Accenture_Event_Participant_Participant_TalentSegment').val(data.TalentSegment);
+                    $('#Orchard_Accenture_Event_Participant_Participant_CareerTrack').val(data.CareerTrack);
+                    if (!data.CareerLevel) {
+                        data.CareerLevel = 0;
+                    }
+                    $('#Orchard_Accenture_Event_Participant_Participant_CareerLevel').val(data.CareerLevel);
+                    $('#Orchard_Accenture_Event_Participant_Participant_DomainSpecialty').val(data.DomainSpecialty);
+                    $('#Orchard_Accenture_Event_Participant_Participant_IndustrySpecialty').val(data.IndustrySpecialty);
+                    $('#Orchard_Accenture_Event_Participant_Participant_FirstSecondarySpecialty').val(data.FirstSecondarySpecialty);
+                    $('#Orchard_Accenture_Event_Participant_Participant_SecondSecondarySpecialty').val(data.SecondSecondarySpecialty);
+                    $('#Orchard_Accenture_Event_Participant_Participant_StandardJobCode').val(data.StandardJobCode);
+                    $('#Orchard_Accenture_Event_Participant_Participant_CurrentLocation').val(data.CurrentLocation);
+                    $('#Orchard_Accenture_Event_Participant_Participant_Timezone').val(data.Timezone);
+                    $('#Orchard_Accenture_Event_Participant_Participant_OrgLevel2Desc').val(data.Orglevel2desc);
+                    $('#Orchard_Accenture_Event_Participant_Participant_ActiveProjects').val(data.CurrentProjects);
+                    $('#Orchard_Accenture_Event_Participant_Participant_CurrentClient').val(data.CurrentClient);
+                    tinyMCE.execCommand('selectAll');
+                    tinyMCE.execCommand('delete');
+                    tinyMCE.execCommand('mceInsertContent', false, data.Bio);
+
+                }
+            });
+        });
+    })
+    //]]>
+    </script>
+}

@@ -1,0 +1,152 @@
+﻿﻿@model Orchard.Accenture.PushNotification.ViewModels.NotificationMessageViewModel
+@{
+    var events = Model.Events;
+    var currentId = Model.CurrentEventId;
+    var sessions = Model.Sessions;
+    var circles = Model.Circles;
+}
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @{
+        Script.Require("jQuery").AtFoot();
+        Script.Require("jQueryUI").AtFoot();
+        Script.Include("Script.js").AtFoot();
+        Style.Include("PushNotification.css");
+    }
+
+</head>
+<body>
+
+    @{
+        Layout.Title = T("Accenture Push Service").ToString();
+
+        using (Html.BeginFormAntiForgeryPost(Url.Action("PushNotification", new { area = "Orchard.Accenture.PushNotification" }), FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            //@Html.ValidationSummary();
+
+        <fieldset class="login-form group">
+            <ol>
+                <li>
+                    <input type="radio" checked name="selection" value="eventwide" />Event Wide Notification<br />
+                </li>
+                <li class="parent">
+                    <fieldset>
+                        <label class="required">@T("Event Picker")</label>
+                        <select name="event-picker" id="EventsPicker">
+                            @if(events != null)
+                            {                                
+                               foreach (var item in events)
+                                {
+                                    if (!((((dynamic)item).VersionRecord != null)
+                                        && ((((dynamic)item).VersionRecord.Published == false)
+                                        || (((dynamic)item).VersionRecord.Published && ((dynamic)item).VersionRecord.Latest == false))))
+                                    {
+                                        if (((dynamic)item).Id == currentId)
+                                        {
+                                            <option selected=selected value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                                        }
+                                    }
+                                }
+                            }
+                        </select>
+                        <img id="loading" height="15" width="15" src="/Modules/Orchard.Accenture.Event/Content/images/loading.gif" />
+                    </fieldset>                                      
+                </li>
+                <li class="child">
+                    <div class="notify">
+                        <ol>
+                            <li><input type="radio" class="sessionswide" name="sessions" value="sessionwide"  />Notify by Session</li>
+                            <li>
+                                <fieldset>
+                                    <label>@T("Sessions Picker")</label>
+                                    <select name="session-picker" id="SelectedSession">
+                                        @if (sessions != null)
+                                        {
+                                            foreach (var item in sessions)
+                                            {
+                                                if (!((((dynamic)item).VersionRecord != null)
+                                                    && ((((dynamic)item).VersionRecord.Published == false)
+                                                    || (((dynamic)item).VersionRecord.Published && ((dynamic)item).VersionRecord.Latest == false))))
+                                                {
+                                                    if (((dynamic)item).Id == currentId)
+                                                    {
+                                                        <option selected=selected value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </fieldset>                               
+                            </li>                           
+                        </ol>
+                    </div>
+                    <div class ="notify">
+                        <ol>
+                            <li>
+                                <input type="radio" name="sessions" value="circlewide" />Notify by Circle
+                            </li>
+                            <li>
+                                <fieldset>
+                                    <label>@T("Circles Picker")</label>
+                                    <select name="circle-picker" id="SelectedCircle">
+                                        @if (circles != null)
+                                        {
+                                            foreach (var item in circles)
+                                            {
+                                                if (!((((dynamic)item).VersionRecord != null)
+                                                    && ((((dynamic)item).VersionRecord.Published == false)
+                                                    || (((dynamic)item).VersionRecord.Published && ((dynamic)item).VersionRecord.Latest == false))))
+                                                {
+                                                    if (((dynamic)item).Id == currentId)
+                                                    {
+                                                        <option selected=selected value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@(((dynamic)item).Id)">@(((dynamic)item).TitlePart.Title)</option>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </fieldset>                               
+                            </li>
+                        </ol>
+                </div>                
+                <li class="clear">
+                    <input type="radio" name="selection" value="single" />Specific Notification<br />
+                </li>
+                <li class="parent">
+                    <label for="password" class="required">To People</label>
+                    <textarea class="text-people" cols="20" id="EIDs" name="EIDs" rows="2"></textarea><br />
+                    For multiple people, please use a comma (,) to separate names.  Example: elmer.d.malinao, dustine.l.a.dequito, jerson.m.cantoneros
+                </li>
+                <li class="parent title">
+                    <label for="title" class="required">Title</label>
+                    <input autofocus="autofocus" class="text-medium" id="title" name="Title" type="text" value="" />
+                </li>
+                <li class="parent">
+                    <label for="password" class="required">Message</label>
+                    <textarea class="text-medium" cols="20" name="Message" rows="2"></textarea>
+                </li>           
+            </ol>
+        </fieldset>
+
+        <button class="primaryAction" type="submit">@T("Send")</button>
+        }
+    }   
+
+    @Display.FootScripts()
+</body>
+</html>

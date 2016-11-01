@@ -1,0 +1,57 @@
+﻿﻿@model Orchard.Accenture.PushNotification.Models.PushServiceSettingsPart
+
+<fieldset>
+    <legend>@T("Accenture Push Service config")</legend>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.UserName)" class="col-sm-2 control-label">@T("User Name")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.UserName, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the UserName. Example:3747_CareerExplorer")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.Password)" class="col-sm-2 control-label">@T("Password")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Password, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the Password. Example: xxxxx")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.Scope)" class="col-sm-2 control-label">@T("Scope")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Scope, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the Scope. Example: https://acnrenotestestusnc.azurewebsites.net/ Prod: https://acnrebarnotesprodscus.azurewebsites.net  , Stage:https://acnrenotesstageusnc.azurewebsites.net")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.Endpoint)" class="col-sm-2 control-label">@T("End Point")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Endpoint, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the url for ESO end point. Prod: https://federation-sts.accenture.com/services/jwt/issue/adfs , Stage: https://federation-sts-stage.accenture.com/services/jwt/issue/adfs")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.PushTenant)" class="col-sm-2 control-label">@T("Push Tenant")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.PushTenant, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the Tenant. Prod: 4316 , Stage: 4316")
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m => m.PushTopic)" class="col-sm-2 control-label">@T("Push Topic")</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.PushTopic, new { @class = "text-medium" })
+        </div>
+        @T("Please provide the Topic. Prod: Omaha , Stage: Omaha")
+    </div>
+
+</fieldset>
+
+
+

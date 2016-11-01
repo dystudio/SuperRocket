@@ -1,0 +1,86 @@
+﻿<Placement>
+  <Place Parts_App_Edit="Content:1.1"/>
+  <Place Parts_Participant_Edit="Content:1.1"/>
+  <Place Parts_InfoCard_Edit="Content:1.2"/>
+  <Place Parts_Session_Edit="Content:1.5.1"/>
+  <Place Parts_Event_Edit="Content:1.1"/>
+  <!--<Place Fields_SmartContentPicker_Edit="Content:1.2"/>-->
+
+  <!-- DateTime -->
+  <Place Fields_DateTime_Edit="Content:1.1"/>
+  <Place Fields_DateTime="Content:before"/>
+
+  <Match DisplayType="SummaryAdmin">
+    <Place Parts_Participant="Content:2;Alternate=ParticipantSummaryAdmin"/>
+  </Match>
+  <Match DisplayType="InfoCard">
+    <Place Parts_Common_Body_Edit="Content:1"/>
+    <Place Parts_Common_Title_Edit="Content:2"/>
+    <Place Parts_InfoCard="Content:3;Alternate=InfoCardSummaryAdmin"/>
+  </Match>
+
+  <!-- Enumeration -->
+  <Match ContentType="App">
+    <Place Fields_Enumeration_Edit="Content:1.2"/>
+  </Match>
+
+  <!--Event-->
+  <Match ContentType="Event">
+    <Place Fields_SmartContentPicker_Edit="Content:1.2;Alternate=SmartContentPicker_Edit_Event_AppPicker"/>
+    <Place Fields_MediaLibraryPicker_Edit-EventSkinFile="-"/>
+  </Match>
+
+  <!--Session-->
+  <Match ContentType="Session">
+    <Place Fields_TaxonomyField_Edit-SessionCategory="-"/>
+  </Match>
+
+  <!--<Match ContentType="Participant">
+    <Place Fields_SmartContentPicker_Edit="Content:1.2;Alternate=SmartContentPicker_Edit_FilterByOwner"/>
+  </Match>
+  <Match ContentType="Session">
+    <Place Fields_SmartContentPicker_Edit="Content:1.2;Alternate=SmartContentPicker_Edit_FilterByOwner"/>
+  </Match>
+  <Match ContentType="InfoCard">
+    <Place Fields_SmartContentPicker_Edit="Content:1.2;Alternate=SmartContentPicker_Edit_FilterByOwner"/>
+  </Match>
+  <Match ContentType="Poll">
+    <Place Fields_SmartContentPicker_Edit="Content:1.2;Alternate=SmartContentPicker_Edit_FilterByOwner"/>
+  </Match>
+  <Match ContentType="Evaluation">
+    <Place Fields_SmartContentPicker_Edit="Content:1.2;Alternate=SmartContentPicker_Edit_FilterByOwner"/>
+  </Match>-->
+
+
+
+
+
+  <!-- Location of field edition -->
+  <Place Fields_TaxonomyField_Edit="Content:1.2"/>
+
+  <!-- Display terms in front-end summaries -->
+  <Match DisplayType="Summary">
+    <Place Fields_TaxonomyField="Content:after"/>
+  </Match>
+
+  <!-- Display terms in content item details -->
+  <Match DisplayType="Detail">
+    <Place Fields_TaxonomyField="Content:5"/>
+  </Match>
+
+  <!-- Display terms in admin summaries -->
+  <Match DisplayType="SummaryAdmin">
+    <Place Fields_TaxonomyField="Content:5"/>
+  </Match>
+
+  <!-- Display in admin -->
+  <Place Parts_Taxonomies_Term_Fields="Content:1"/>
+
+  <!-- New Shapes -->
+  <Place Parts_TaxonomyPart="Content:5" />
+  <Place Parts_TermPart="Content:5" />
+  <Place Parts_TermPart_Feed="Content" />
+
+  <!-- Navigation -->
+  <Place Parts_Navigation_Taxonomy_Edit="Content:5"/>
+</Placement>

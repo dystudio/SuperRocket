@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7F12902-412B-4663-8B51-2C75C924AA03}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Orchard.Accenture.Event</RootNamespace>
+    <AssemblyName>Orchard.Accenture.Event</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\newtonsoft.json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IdentityModel.Tokens.Jwt.1.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\..\lib\aspnetwebapi\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetwebapi\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\..\lib\aspnetwebapi\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetwebapi\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetwebapi\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Thinktecture.IdentityModel.3.4.6\lib\net45\Thinktecture.IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\Event.png" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\template\Participant_template.xlsx" />
+    <Content Include="Recipes\Orchard.Accenture.Event.xml" />
+    <Content Include="Scripts\Event\List.js" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\template\Agenda_template.xlsx" />
+    <Content Include="Content\template\Participant_delete_template.xlsx" />
+    <None Include="Service References\Orchard.Odata.Services\Reference.datasvcmap">
+      <Generator>DataServicesCoreClientGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\Event\List.css" />
+    <Content Include="Scripts\ajaxedit.en-US.js" />
+    <Content Include="Scripts\ajaxedit.zh-CN.js" />
+    <Content Include="Scripts\ajaxedit.js" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\core.zh-CN.js" />
+    <Content Include="Scripts\core.en-US.js" />
+    <Content Include="Scripts\core.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.reset.js" />
+    <Content Include="Scripts\jquery.sort.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\url.js" />
+    <Content Include="Styles\Orchard.Accenture.Event.css" />
+    <Content Include="Views\CircleAdmin\List.cshtml" />
+    <Content Include="Views\EditorTemplates\Fields\SmartContentPicker.Edit.Event.AppPicker.cshtml" />
+    <Content Include="Views\ParticipantSummaryAdmin.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\Web.config" />
+    <Content Include="Styles\bootstrap-datetimepicker.css" />
+    <Content Include="Styles\bootstrap-datetimepicker.min.css" />
+    <Content Include="Styles\Web.config" />
+    <Content Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Module.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
+      <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
+      <Name>Orchard.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Orchard.Core.csproj">
+      <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
+      <Name>Orchard.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contrib.MediaFolder\Contrib.MediaFolder.csproj">
+      <Project>{fee137d8-10b3-4a30-97ed-8cef1fb4d5f2}</Project>
+      <Name>Contrib.MediaFolder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dolph.SmartContentPicker\Dolph.SmartContentPicker.csproj">
+      <Project>{b00e7d16-cccb-4030-95d6-26bbd7e5a810}</Project>
+      <Name>Dolph.SmartContentPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.ContentPermissions\Orchard.ContentPermissions.csproj">
+      <Project>{e826f796-8ce3-4b5b-8423-5aa5f81d2fc3}</Project>
+      <Name>Orchard.ContentPermissions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.ContentPicker\Orchard.ContentPicker.csproj">
+      <Project>{f301ef7d-f19c-4d83-aa94-cb64f29c037d}</Project>
+      <Name>Orchard.ContentPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.Fields\Orchard.Fields.csproj">
+      <Project>{3787dde5-e5c8-4841-bda7-dcb325388064}</Project>
+      <Name>Orchard.Fields</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.jQuery\Orchard.jQuery.csproj">
+      <Project>{8f116b06-1c0e-4e4c-9a0a-d2fab851e768}</Project>
+      <Name>Orchard.jQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.MediaLibrary\Orchard.MediaLibrary.csproj">
+      <Project>{73a7688a-5bd3-4f7e-adfa-ce36c5a10e3b}</Project>
+      <Name>Orchard.MediaLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.MediaPicker\Orchard.MediaPicker.csproj">
+      <Project>{43d0ec0b-1955-4566-8d31-7b9102da1703}</Project>
+      <Name>Orchard.MediaPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.Roles\Orchard.Roles.csproj">
+      <Project>{d10ad48f-407d-4db5-a328-173ec7cb010f}</Project>
+      <Name>Orchard.Roles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.Taxonomies\Orchard.Taxonomies.csproj">
+      <Project>{e649ea64-d213-461b-87f7-d67035801443}</Project>
+      <Name>Orchard.Taxonomies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.Users\Orchard.Users.csproj">
+      <Project>{79aed36e-abd0-4747-93d3-8722b042454b}</Project>
+      <Name>Orchard.Users</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\EventController.cs" />
+    <Compile Include="Api\GoogleMapController.cs" />
+    <Compile Include="Api\PeopleController.cs" />
+    <Compile Include="Api\OEventController.cs" />
+    <Compile Include="Common\CacheAndSignals.cs" />
+    <Compile Include="Common\NullToEmptyStringResolver.cs" />
+    <Compile Include="Controllers\DeleteParticipantController.cs" />
+    <Compile Include="Controllers\EvaluationAdminController.cs" />
+    <Compile Include="Controllers\DelegationController.cs" />
+    <Compile Include="Controllers\ImportParticipantAdminController.cs" />
+    <Compile Include="Controllers\ImportSessionAdminController.cs" />
+    <Compile Include="Controllers\CircleAdminController.cs" />
+    <Compile Include="Controllers\InfoCardAdminController.cs" />
+    <Compile Include="Controllers\AppAdminController.cs" />
+    <Compile Include="Controllers\PollAdminController.cs" />
+    <Compile Include="Controllers\SessionAdminController.cs" />
+    <Compile Include="Controllers\ParticipantAdminController.cs" />
+    <Compile Include="Core\ControllerHelper.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Drivers\AppPartDriver.cs" />
+    <Compile Include="Drivers\EventPartDriver.cs" />
+    <Compile Include="Drivers\InfoCardPartDriver.cs" />
+    <Compile Include="Drivers\ParticipantPartDriver.cs" />
+    <Compile Include="Drivers\CirclePartDriver.cs" />
+    <Compile Include="Extension\AuthorizeAppAttribute.cs" />
+    <Compile Include="Extension\AuthorizeAppApiFilter.cs" />
+    <Compile Include="Extension\AuthorizeAppFilter.cs" />
+    <Compile Include="Extension\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Extension\HttpRoutes.cs" />
+    <Compile Include="Extension\AuthorizeAppApiAttribute.cs" />
+    <Compile Include="Handlers\AppPartHandler.cs" />
+    <Compile Include="Handlers\EventPartHandler.cs" />
+    <Compile Include="Handlers\InfoCardPartHandler.cs" />
+    <Compile Include="Handlers\ParticipantPartHandler.cs" />
+    <Compile Include="Drivers\SessionPartDriver.cs" />
+    <Compile Include="Handlers\CirclePartHandler.cs" />
+    <Compile Include="Handlers\SessionPartHandler.cs" />
+    <Compile Include="Handlers\PeopleServiceSettingsPartHandler.cs" />
+    <Compile Include="Interfaces\IEventService.cs" />
+    <Compile Include="Migrations\CircleMigrations.cs" />
+    <Compile Include="Migrations\InfoCardMigrations.cs" />
+    <Compile Include="Migrations\Migrations.cs" />
+    <Compile Include="Models\CirclePart.cs" />
+    <Compile Include="Models\CirclePartRecord.cs" />
+    <Compile Include="Models\ContentItem.cs" />
+    <Compile Include="Models\AppPart.cs" />
+    <Compile Include="Models\EventPart.cs" />
+    <Compile Include="Models\AppPartRecord.cs" />
+    <Compile Include="Models\InfoCardPart.cs" />
+    <Compile Include="Models\InfoCardPartRecord.cs" />
+    <Compile Include="Models\ParticipantModelForExcel.cs" />
+    <Compile Include="Models\ParticipantPart.cs" />
+    <Compile Include="Models\ParticipantPartRecord.cs" />
+    <Compile Include="Models\SessionPart.cs" />
+    <Compile Include="Models\SessionPartRecord.cs" />
+    <Compile Include="Models\EventPartRecord.cs" />
+    <Compile Include="Models\PeopleServiceSettingsPart.cs" />
+    <Compile Include="Service References\Orchard.Odata.Services\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceModels\EventModel.cs" />
+    <Compile Include="Services\ContentTypesService.cs" />
+    <Compile Include="Services\DelegationService.cs" />
+    <Compile Include="Services\GoogleMapService.cs" />
+    <Compile Include="Services\IDelegationService.cs" />
+    <Compile Include="Services\IGoogleMapService.cs" />
+    <Compile Include="Services\IAppService.cs" />
+    <Compile Include="Services\IImportService.cs" />
+    <Compile Include="Services\ImportService.cs" />
+    <Compile Include="Services\IPeopleService.cs" />
+    <Compile Include="Services\AppService.cs" />
+    <Compile Include="Services\PeopleService.cs" />
+    <Compile Include="Services\OEventService.cs" />
+    <Compile Include="Services\EventService.cs" />
+    <Compile Include="Services\IOEventService.cs" />
+    <Compile Include="Services\IContentTypesService.cs" />
+    <Compile Include="ViewModels\DeleteParticipantViewModel.cs" />
+    <Compile Include="ViewModels\EventSearch.cs" />
+    <Compile Include="ViewModels\EventSort.cs" />
+    <Compile Include="ViewModels\AppViewModel.cs" />
+    <Compile Include="ViewModels\EventViewModel.cs" />
+    <Compile Include="AdminMenu.cs" />
+    <Compile Include="Permissions.cs" />
+    <Compile Include="Routes.cs" />
+    <Compile Include="ViewModels\ImportParticipantViewModel.cs" />
+    <Compile Include="ViewModels\ImportSessionViewModel.cs" />
+    <Compile Include="ViewModels\InfoCardViewModel.cs" />
+    <Compile Include="ViewModels\ListViewModel.cs" />
+    <Compile Include="ViewModels\OrderByDirection.cs" />
+    <Compile Include="ViewModels\ParticipantEditorViewModel.cs" />
+    <Compile Include="ViewModels\SessionEditorViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Loader.cshtml" />
+    <Content Include="Content\Web.config" />
+    <Content Include="Views\Event\List.cshtml" />
+    <Content Include="Views\DisplayTemplates\Event\Table.cshtml" />
+    <Content Include="Views\EditorTemplates\Event\Edit.cshtml" />
+    <Content Include="Views\EditorTemplates\Event\Search.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\Participant.cshtml" />
+    <Content Include="Views\Parts\Participant.cshtml" />
+    <Content Include="placement.info">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\ParticipantAdmin\List.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\InfoCard.cshtml" />
+    <Content Include="Views\InfoCardAdmin\List.cshtml" />
+    <Content Include="Views\Parts\Session.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\Session.cshtml" />
+    <Content Include="Views\SessionAdmin\List.cshtml" />
+    <Content Include="Views\Parts\Event.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\Event.cshtml" />
+    <None Include="Service References\Orchard.Odata.Services\service.edmx" />
+    <Content Include="Views\EditorTemplates\Parts\App.cshtml" />
+    <Content Include="Views\AppAdmin\List.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\PeopleService.PeopleServiceSettings.cshtml" />
+    <Content Include="Views\EvaluationAdmin\List.cshtml" />
+    <Content Include="Views\PollAdmin\List.cshtml" />
+    <Content Include="Views\EditorTemplates\Fields\SmartContentPicker.Edit.FilterByOwner.cshtml" />
+    <Content Include="Views\EditorTemplates\Fields\SmartContentPicker.Edit.cshtml" />
+    <Content Include="Views\ImportSessionAdmin\Import.cshtml" />
+    <Content Include="Views\ImportParticipantAdmin\Import.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\Circle.cshtml" />
+    <Content Include="Views\Delegation\Index.cshtml" />
+    <Content Include="Views\DeleteParticipant\Delete.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\Orchard.Odata.Services\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Localization\zh-CN\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" DependsOnTargets="AfterBuildCompiler">
+    <PropertyGroup>
+      <AreasManifestDir>$(ProjectDir)\..\Manifests</AreasManifestDir>
+    </PropertyGroup>
+    <!-- If this is an area child project, uncomment the following line:
+    <CreateAreaManifest AreaName="$(AssemblyName)" AreaType="Child" AreaPath="$(ProjectDir)" ManifestPath="$(AreasManifestDir)" ContentFiles="@(Content)" />
+    -->
+    <!-- If this is an area parent project, uncomment the following lines:
+    <CreateAreaManifest AreaName="$(AssemblyName)" AreaType="Parent" AreaPath="$(ProjectDir)" ManifestPath="$(AreasManifestDir)" ContentFiles="@(Content)" />
+    <CopyAreaManifests ManifestPath="$(AreasManifestDir)" CrossCopy="false" RenameViews="true" />
+    -->
+  </Target>
+  <Target Name="AfterBuildCompiler" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>45979</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://orchard.codeplex.com</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -9,3 +9,4 @@ Dependencies: Orchard.Fields, Orchard.ContentPicker
 Features:
     RaisingStudio.Contents.RepositoryFactory:
         Description: Description for feature RaisingStudio.Contents.RepositoryFactory.
+		Category: A SuperRocket

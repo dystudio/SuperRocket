@@ -9,3 +9,4 @@ Dependencies: Orchard.Fields, Orchard.jQuery, Successful.Bootstrap
 Features:
     RaisingStudio.ModuleGenerator:
         Description: Description for feature RaisingStudio.ModuleGenerator.
+		Category: A SuperRocket

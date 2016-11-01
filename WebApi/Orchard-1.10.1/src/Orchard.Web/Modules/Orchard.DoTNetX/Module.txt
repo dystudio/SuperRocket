@@ -9,3 +9,4 @@ Dependencies: RaisingStudio.Contents.RepositoryFactory, Orchard.jQuery, Successf
 Features:
     Orchard.DoTNetX:
         Description: Depends On: jQuery, Successful.Bootstrap, RaisingStudio.Contents.RepositoryFactory.
+		Category: SuperRocket

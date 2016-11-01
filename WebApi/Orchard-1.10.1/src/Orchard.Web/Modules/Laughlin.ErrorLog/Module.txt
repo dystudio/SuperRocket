@@ -8,3 +8,4 @@ Description: Shows a friendly view of the error log
 Category: Logging
 Features:
     Laughlin.ErrorLog:
+	Category: SuperRocket

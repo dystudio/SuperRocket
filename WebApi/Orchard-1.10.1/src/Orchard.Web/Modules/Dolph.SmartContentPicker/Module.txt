@@ -9,4 +9,4 @@ Features:
     Dolph.SmartContentPicker:
         Description: In-page content field picker, for connecting content items to each other and creating relationships.  Using jQuery Chosen.
 		Dependencies: Contents
-		Category: Input Editor
+		Category: SuperRocket

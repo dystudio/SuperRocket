@@ -16,12 +16,12 @@ using Orchard.Logging;
 using Orchard.Accenture.Event.Services;
 using System.Web.Mvc;
 using Orchard.Mvc.Filters;
-using JetBrains.Annotations;
+//using JetBrains.Annotations;
 using Orchard.WebApi.Filters;
 
 namespace Orchard.Accenture.Event.Extension
 {
-    [UsedImplicitly]
+    //[UsedImplicitly]
     public class AuthorizeAppFilter : FilterProvider, IAuthorizationFilter, IApiFilterProvider
     {
         private readonly IAppService _service;

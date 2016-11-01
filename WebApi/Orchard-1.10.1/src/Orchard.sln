@@ -302,6 +302,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchard.OData", "Orchard.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amba.AmazonS3", "Orchard.Web\Modules\Amba.AmazonS3\Amba.AmazonS3.csproj", "{F7A05B63-9397-4C6A-B625-EDD5D0D55675}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contrib.MediaFolder", "Orchard.Web\Modules\Contrib.MediaFolder\Contrib.MediaFolder.csproj", "{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeCoverage|Any CPU = CodeCoverage|Any CPU
@@ -1849,6 +1851,22 @@ Global
 		{F7A05B63-9397-4C6A-B625-EDD5D0D55675}.Staging AR|Any CPU.Build.0 = Release|Any CPU
 		{F7A05B63-9397-4C6A-B625-EDD5D0D55675}.Staging|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A05B63-9397-4C6A-B625-EDD5D0D55675}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.CodeCoverage|Any CPU.Build.0 = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Coverage|Any CPU.Build.0 = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.FxCop|Any CPU.Build.0 = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Staging AR|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Staging AR|Any CPU.Build.0 = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1949,6 +1967,7 @@ Global
 		{D793F2E8-C541-46FC-96B0-D9E099ACDADA} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{CE0F4063-421B-48B0-A62E-9B2E6ECA0827} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{F7A05B63-9397-4C6A-B625-EDD5D0D55675} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
+		{FEE137D8-10B3-4A30-97ED-8CEF1FB4D5F2} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4

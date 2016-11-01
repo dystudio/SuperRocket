@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+﻿//using JetBrains.Annotations;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Handlers;
 using Orchard.Localization;
@@ -6,7 +6,7 @@ using Orchard.Accenture.Event.Models;
 
 namespace Orchard.Accenture.Event.Handlers
 {
-    [UsedImplicitly]
+    //[UsedImplicitly]
     public class PeopleServiceSettingsPartHandler : ContentHandler {
         public PeopleServiceSettingsPartHandler() {
             T = NullLocalizer.Instance;

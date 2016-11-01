@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+﻿//using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Orchard.Accenture.Event.Models;
@@ -23,7 +23,7 @@ using System.Web.Http.Filters;
 
 namespace Orchard.Accenture.Event.Extension
 {
-    [UsedImplicitly]
+    //[UsedImplicitly]
     public class AuthorizeAppApiFilter : IAuthorizationFilter, IApiFilterProvider
     {
         private readonly IOrchardServices _orchardServices;

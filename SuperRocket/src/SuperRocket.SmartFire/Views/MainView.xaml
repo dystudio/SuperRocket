@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SuperRocket.ModuleOne.Views.MainView"
+﻿<UserControl x:Class="SuperRocket.SmartFire.Views.MainView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,11 +8,11 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid Style="{StaticResource ContentRoot}">
-        <mui:ModernTab SelectedSource="/SuperRocket.ModuleOne;component/Views/DataGrid.xaml" Layout="List">
+        <mui:ModernTab SelectedSource="/SuperRocket.SmartFire;component/Views/DataGrid.xaml" Layout="List">
             <mui:ModernTab.Links>
-                <mui:Link DisplayName="Option 1" Source="/SuperRocket.ModuleOne;component/Views/DataGrid.xaml" />
-                <mui:Link DisplayName="Option 2" Source="/SuperRocket.ModuleOne;component/Views/LoremIpsum1.xaml" />
-                <mui:Link DisplayName="Option 3" Source="/SuperRocket.ModuleOne;component/Views/LoremIpsum2.xaml" />
+                <mui:Link DisplayName="Option 1" Source="/SuperRocket.SmartFire;component/Views/DataGrid.xaml" />
+                <mui:Link DisplayName="Option 2" Source="/SuperRocket.SmartFire;component/Views/LoremIpsum1.xaml" />
+                <mui:Link DisplayName="Option 3" Source="/SuperRocket.SmartFire;component/Views/LoremIpsum2.xaml" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

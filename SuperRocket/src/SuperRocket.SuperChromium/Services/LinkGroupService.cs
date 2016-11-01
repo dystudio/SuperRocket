@@ -1,9 +1,9 @@
 ﻿using System;
 using FirstFloor.ModernUI.Presentation;
-using SuperRocket.ModuleOne.Views;
 using SuperRocket.Core.Interfaces;
+using SuperRocket.SuperChromium.Views;
 
-namespace SuperRocket.ModuleOne.Services
+namespace SuperRocket.SuperChromium.Services
 {
     /// <summary>
     /// Creates a LinkGroup
@@ -18,13 +18,13 @@ namespace SuperRocket.ModuleOne.Services
         {
             LinkGroup linkGroup = new LinkGroup
             {
-                DisplayName = "Module One"
+                DisplayName = "Super Chromium"
             };
 
             linkGroup.Links.Add(new Link
             {
-                DisplayName = "Module One",
-                Source = new Uri($"/SuperRocket.ModuleOne;component/Views/{nameof(MainView)}.xaml", UriKind.Relative)
+                DisplayName = "Super Chromium",
+                Source = new Uri($"/SuperRocket.SuperChromium;component/Views/{nameof(MainView)}.xaml", UriKind.Relative)
             });
 
             return linkGroup;

@@ -50,7 +50,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>dm.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -220,7 +221,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\DMTheme.xaml">
+    <Page Include="Themes\SuperRocketTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -275,6 +276,7 @@
     <None Include="Resource\Modules\Example\fonts\fontawesome-webfont.woff2" />
     <Resource Include="Resource\Modules\Example\fonts\FontAwesome.otf" />
     <None Include="Resource\Modules\Example\js\.DS_Store" />
+    <Resource Include="Themes\SuperRocket32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -284,12 +286,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Themes\background.windows10.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Themes\dm-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="dm.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.BrowserSubprocess\CefSharp.BrowserSubprocess.csproj">
@@ -343,6 +339,9 @@
     <Content Include="Resource\Modules\Example\css\vegas.min.css" />
     <Content Include="Resource\Modules\Example\Default.html" />
     <Content Include="Resource\Modules\Example\fonts\fontawesome-webfont.svg" />
+    <Resource Include="SuperRocket.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resource\Modules\Example\images\about-img.jpg" />
     <Resource Include="Resource\Modules\Example\images\gallery-img1.jpg" />
     <Resource Include="Resource\Modules\Example\images\gallery-img2.jpg" />

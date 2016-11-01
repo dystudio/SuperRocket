@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7859760-ACF6-45D2-940F-23A46009E12F}</ProjectGuid>
+    <ProjectGuid>{36B72692-ED5B-4DA8-98E7-795CAE23F342}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SuperRocket.ModuleOne</RootNamespace>
-    <AssemblyName>SuperRocket.ModuleOne</AssemblyName>
+    <RootNamespace>SuperRocket.SuperChromium</RootNamespace>
+    <AssemblyName>SuperRocket.SuperChromium</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,6 +33,24 @@
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.8.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
@@ -84,7 +102,17 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResourceHandler\CefSharpLocalResourceSchemeHandler.cs" />
+    <Compile Include="ResourceHandler\CefSharpSchemeHandlerFactory.cs" />
+    <Compile Include="ResourceHandler\MenuHandler.cs" />
+    <Compile Include="ResourceHandler\RequestHandler.cs" />
+    <Compile Include="Services\BrowserManager.cs" />
+    <Compile Include="Services\IBrowserManager.cs" />
+    <Compile Include="ViewModels\ChromiumViewModel.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
+    <Compile Include="Views\Chromium.xaml.cs">
+      <DependentUpon>Chromium.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DataGrid.xaml.cs">
       <DependentUpon>DataGrid.xaml</DependentUpon>
     </Compile>
@@ -95,10 +123,14 @@
       <DependentUpon>LoremIpsum1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\LinkGroupService.cs" />
-    <Compile Include="ModuleOne.cs" />
+    <Compile Include="SuperChromiumModule.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Chromium.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\DataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -141,8 +173,23 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.BrowserSubprocess\CefSharp.BrowserSubprocess.csproj">
+      <Project>{23ee5140-2c2c-4b53-a954-10b08dca6bd6}</Project>
+      <Name>CefSharp.BrowserSubprocess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.Core\CefSharp.Core.vcxproj">
+      <Project>{7b495581-2271-4f41-9476-acb86e8c864f}</Project>
+      <Name>CefSharp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp.Wpf\CefSharp.Wpf.csproj">
+      <Project>{e6cb3790-f267-4ac7-892c-2620737682ca}</Project>
+      <Name>CefSharp.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.CefSharp\CefSharp\CefSharp.csproj">
+      <Project>{a55848cc-10e7-40cb-addb-04740b16dd43}</Project>
+      <Name>CefSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuperRocket.Core\SuperRocket.Core.csproj">
       <Project>{085a3767-0f46-4923-8eb5-596ce276fc47}</Project>
       <Name>SuperRocket.Core</Name>

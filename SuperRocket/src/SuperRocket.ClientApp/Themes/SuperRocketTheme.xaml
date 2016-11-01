@@ -11,7 +11,7 @@
     <Grid x:Key="WindowBackgroundContent" x:Shared="false" Margin="0,0,0,-36">
         <Rectangle Margin="0,0,36,-36">
             <Rectangle.Fill>
-                <ImageBrush Opacity=".2" ImageSource="dm-logo.png" Stretch="None" AlignmentX="Right" AlignmentY="Bottom" />
+                <ImageBrush Opacity=".2" ImageSource="SuperRocket32.png" Stretch="None" AlignmentX="Right" AlignmentY="Bottom" />
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle>

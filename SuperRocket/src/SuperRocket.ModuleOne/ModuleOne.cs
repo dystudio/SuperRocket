@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
-using SuperRocket.ModuleOne.Services;
 
 namespace SuperRocket.ModuleOne
 {
@@ -21,7 +20,7 @@ namespace SuperRocket.ModuleOne
 
         public void Initialize()
         {
-            _container.RegisterType<IBrowserManager, BrowserManager>();
+            //_container.RegisterType<InterfaceName, ClassName>();
             //System.Windows.MessageBox.Show($"{nameof(ModuleOne)} has been initialized ;-)");
         }
     }

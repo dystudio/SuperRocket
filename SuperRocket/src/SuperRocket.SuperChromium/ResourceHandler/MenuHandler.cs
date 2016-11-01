@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows;
 using CefSharp;
 
-namespace SuperRocket.ModuleOne.ResourceHandler
+namespace SuperRocket.SuperChromium.ResourceHandler
 {
     public class MenuHandler : IContextMenuHandler
     {

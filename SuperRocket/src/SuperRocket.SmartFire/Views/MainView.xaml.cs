@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace SuperRocket.ModuleOne.Views
+namespace SuperRocket.SmartFire.Views
 {
     /// <summary>
     /// Interaction logic for MainView.xaml

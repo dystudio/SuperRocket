@@ -1,9 +1,9 @@
 ﻿using System;
 using FirstFloor.ModernUI.Presentation;
-using SuperRocket.ModuleOne.Views;
+using SuperRocket.SmartFire.Views;
 using SuperRocket.Core.Interfaces;
 
-namespace SuperRocket.ModuleOne.Services
+namespace SuperRocket.SmartFire.Services
 {
     /// <summary>
     /// Creates a LinkGroup
@@ -18,13 +18,13 @@ namespace SuperRocket.ModuleOne.Services
         {
             LinkGroup linkGroup = new LinkGroup
             {
-                DisplayName = "Module One"
+                DisplayName = "Smart Fire"
             };
 
             linkGroup.Links.Add(new Link
             {
-                DisplayName = "Module One",
-                Source = new Uri($"/SuperRocket.ModuleOne;component/Views/{nameof(MainView)}.xaml", UriKind.Relative)
+                DisplayName = "Smart Fire",
+                Source = new Uri($"/SuperRocket.SmartFire;component/Views/{nameof(MainView)}.xaml", UriKind.Relative)
             });
 
             return linkGroup;

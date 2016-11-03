@@ -198,6 +198,10 @@
       <Project>{085a3767-0f46-4923-8eb5-596ce276fc47}</Project>
       <Name>SuperRocket.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuperRocket.Framework\SuperRocket.Framework.csproj">
+      <Project>{DEF6FD60-A038-4190-AE37-568BB5FB41F5}</Project>
+      <Name>SuperRocket.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

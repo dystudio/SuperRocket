@@ -3,7 +3,6 @@ using System.Windows;
 using System.Reflection;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
-using Prism.Unity;
 using FirstFloor.ModernUI.Presentation;
 using SuperRocket.Core.Interfaces;
 using SuperRocket.ClientApp;
@@ -13,10 +12,12 @@ using log4net.Config;
 using SuperRocket.Core;
 using SuperRocket.Framework;
 using SuperRocket.Framework.Log;
+using Prism.Autofac;
+using Autofac;
 
 namespace SuperRocket.CientApp
 {
-    class Bootstrapper : UnityBootstrapper
+    class Bootstrapper : AutofacBootstrapper
     {
         private const string MODULES_PATH = @".\modules";
         private LinkGroupCollection linkGroupCollection = null;
@@ -41,11 +42,11 @@ namespace SuperRocket.CientApp
             App.Current.MainWindow.Show();
         }
 
-        protected override void ConfigureContainer()
-        {
-            base.ConfigureContainer();
-            //Container.RegisterType<InterfaceName, ClassName>();
-        }
+        //protected override void ConfigureContainer()
+        //{
+        //    base.ConfigureContainer();
+        //    //Container.RegisterType<InterfaceName, ClassName>();
+        //}
 
         protected override IModuleCatalog CreateModuleCatalog()
         {

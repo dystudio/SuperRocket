@@ -1,14 +1,15 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
+using Autofac;
 
 namespace SuperRocket.ModuleOne
 {
     public class ModuleOne : IModule
     {
-        private readonly IUnityContainer _container;
+        private readonly IContainer _container;
         
-        public ModuleOne(IUnityContainer container)
+        public ModuleOne(IContainer container)
         {
             if (container == null)
             {

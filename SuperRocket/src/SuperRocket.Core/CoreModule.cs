@@ -2,14 +2,15 @@
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using SuperRocket.Core.Services;
+using Autofac;
 
 namespace SuperRocket.Core
 {
     public class CoreModule : IModule
     {
-        private readonly IUnityContainer _container;
+        private readonly IContainer _container;
 
-        public CoreModule(IUnityContainer container)
+        public CoreModule(IContainer container)
         {
             if (container == null)
             {
@@ -21,7 +22,10 @@ namespace SuperRocket.Core
 
         public void Initialize()
         {
-            _container.RegisterType<ICustomerService, CustomerService>(new ContainerControlledLifetimeManager());
+            // _container.RegisterType<ICustomerService, CustomerService>(new ContainerControlledLifetimeManager());
+            var cb = new ContainerBuilder();
+            cb.RegisterType<CustomerService>().As<ICustomerService>();
+            cb.Update(_container);
         }
     }
 }

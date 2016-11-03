@@ -11,9 +11,13 @@ using Prism.Logging;
 using log4net.Config;
 using SuperRocket.Core;
 using SuperRocket.Framework;
-using SuperRocket.Framework.Log;
+using SuperRocket.Framework.Logger;
 using Prism.Autofac;
 using Autofac;
+using SuperRocket.Framework.Caching;
+using SuperRocket.Framework.Caching.Impl;
+using SuperRocket.Framework.Environment;
+using SuperRocket.Framework.Environment.Configuration;
 
 namespace SuperRocket.CientApp
 {
@@ -31,12 +35,30 @@ namespace SuperRocket.CientApp
                 shell.AddLinkGroups(linkGroupCollection);
             }
 
+            var cb = new ContainerBuilder();
+            cb.RegisterType<KernelBuilder>().As<IKernelBuilder>().SingleInstance();
+            cb.Update(Container);
+
             return shell;
         }
 
         protected override void InitializeShell()
         {
             base.InitializeShell();
+
+            IKernelBuilder builder = Container.Resolve<IKernelBuilder>();
+            //This is where to register additional lib
+            //builder.OnStarting(b => b.RegisterType<Shell>().AsSelf().As<ICacheManager>().InstancePerLifetimeScope());
+            builder.UseCaching(c => c.UseMemoryCache());
+
+            var hostContainer = builder.Build();
+            var host = hostContainer.Resolve<IHost>();
+            host.Initialize();
+
+            var work = host.CreateStandaloneEnvironment(new ShellSettings { Name = "Default" });
+
+            //var form = work.Resolve<Shell>();
+
 
             App.Current.MainWindow = (Window)Shell;
             App.Current.MainWindow.Show();

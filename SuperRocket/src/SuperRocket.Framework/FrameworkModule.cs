@@ -21,7 +21,7 @@ namespace SuperRocket.Framework
 
         public void Initialize()
         {
-            //_container.RegisterType<ICustomerService, CustomerService>(new ContainerControlledLifetimeManager());
+
         }
     }
 }

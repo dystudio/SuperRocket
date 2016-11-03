@@ -1,7 +1,7 @@
 ﻿using log4net;
 using Prism.Logging;
 
-namespace SuperRocket.Framework.Log
+namespace SuperRocket.Framework.Logging
 {   
     public class Log4NetLogger : ILoggerFacade
     {

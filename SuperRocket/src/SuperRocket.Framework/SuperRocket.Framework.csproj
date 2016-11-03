@@ -86,7 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrameworkModule.cs" />
-    <Compile Include="Log\Log4NetLogger.cs" />
+    <Compile Include="Logging\Log4NetLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

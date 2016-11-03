@@ -25,7 +25,7 @@ namespace SuperRocket.CientApp
     {
         private const string MODULES_PATH = @".\modules";
         private LinkGroupCollection linkGroupCollection = null;
-
+        private ICacheManager _cacheManager;
         protected override DependencyObject CreateShell()
         {
             Shell shell = Container.Resolve<Shell>();
@@ -39,9 +39,11 @@ namespace SuperRocket.CientApp
             cb.RegisterType<KernelBuilder>().As<IKernelBuilder>().SingleInstance();
             cb.Update(Container);
 
+            
+
             return shell;
         }
-
+        public ILifetimeScope LifetimeScope { get; set; }
         protected override void InitializeShell()
         {
             base.InitializeShell();
@@ -52,8 +54,25 @@ namespace SuperRocket.CientApp
             builder.UseCaching(c => c.UseMemoryCache());
 
             var hostContainer = builder.Build();
+
+            //To make sure every property has its injected value
+            var type = GetType();
+            var properties = type.GetProperties();
+            foreach (var property in properties)
+            {
+                var propertyType = property.PropertyType;
+                if (!hostContainer.IsRegistered(propertyType))
+                    continue;
+                property.SetValue(this, hostContainer.Resolve(propertyType), null);
+            }
+            //To load the cache manager to manage cache
+            _cacheManager = LifetimeScope.Resolve<ICacheManager>(new TypedParameter(typeof(Type), typeof(Bootstrapper)));
+
             var host = hostContainer.Resolve<IHost>();
             host.Initialize();
+
+          
+            
 
             var work = host.CreateStandaloneEnvironment(new ShellSettings { Name = "Default" });
 

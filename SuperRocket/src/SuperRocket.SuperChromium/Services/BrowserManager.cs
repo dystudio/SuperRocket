@@ -12,6 +12,10 @@ namespace SuperRocket.SuperChromium.Services
 {
     public class BrowserManager : IBrowserManager
     {
+        public BrowserManager()
+        {
+                
+        }
         public void CefInitialize()
         {
             if (!Cef.IsInitialized)

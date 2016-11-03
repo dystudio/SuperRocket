@@ -22,9 +22,6 @@ namespace SuperRocket.SuperChromium
 
         public void Initialize()
         {
-            //BrowserManager manager = new BrowserManager();
-            //_container.RegisterInstance(typeof(IBrowserManager), manager);
-            //_container.RegisterType<IBrowserManager, BrowserManager>(new ContainerControlledLifetimeManager());
             var cb = new ContainerBuilder();
             cb.RegisterType<BrowserManager>().As<IBrowserManager>();
             cb.Update(_container);

@@ -22,7 +22,6 @@ namespace SuperRocket.Core
 
         public void Initialize()
         {
-            // _container.RegisterType<ICustomerService, CustomerService>(new ContainerControlledLifetimeManager());
             var cb = new ContainerBuilder();
             cb.RegisterType<CustomerService>().As<ICustomerService>();
             cb.Update(_container);

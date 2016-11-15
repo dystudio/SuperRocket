@@ -39,7 +39,7 @@ namespace Orchard.SuperRocket.Api
 
         /// <summary>
         /// GET Event/GetContentTypeDefinition
-        /// example: http://localhost/api/Event/GetTypeDefinition?type=Participant
+        /// example: http://localhost/api/SuperRocket/GetContentTypeDefinition?type=User
         /// </summary>
         /// <param name="type">Content Type Name</param>
         /// <returns></returns>
@@ -51,10 +51,10 @@ namespace Orchard.SuperRocket.Api
                     where t.Name == type
                     select t).FirstOrDefault();
         }
-                
+
         /// <summary>
         /// GET Event/GetContentTypes
-        /// example : http://localhost/api/Event/GetContentTypes
+        /// example : http://localhost/api/SuperRocket/GetContentTypes
         /// </summary>
         /// <returns>All content type names</returns>
         [HttpGet]

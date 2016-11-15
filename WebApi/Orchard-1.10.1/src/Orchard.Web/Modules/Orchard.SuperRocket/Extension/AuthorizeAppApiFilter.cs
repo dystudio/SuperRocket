@@ -114,7 +114,7 @@ namespace Orchard.SuperRocket.Extension
             //    return continuation();
 
             //return Task.FromResult<HttpResponseMessage>(response);            
-            return null;
+            return continuation();
         }
 
         private string GetEid(HttpRequestMessage request)

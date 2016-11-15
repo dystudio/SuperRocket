@@ -16,9 +16,7 @@ using System.Net.Http;
 using System.Text;
 using System.Web.Http;
 
-//using Orchard.Users.Services;
-
-namespace Orchard.Accenture.Event.Api
+namespace Orchard.SuperRocket.Api
 {
     [AuthorizeAppApiAttribute]
     public class EventController : ApiController

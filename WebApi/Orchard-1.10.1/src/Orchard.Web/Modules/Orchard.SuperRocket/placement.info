@@ -1,21 +1,7 @@
 ﻿<Placement>
-
-  <!-- DateTime -->
-  <Place Fields_DateTime_Edit="Content:1.1"/>
-  <Place Fields_DateTime="Content:before"/>
-
-  <Match DisplayType="SummaryAdmin">
-    <Place Parts_Participant="Content:2;Alternate=ParticipantSummaryAdmin"/>
-  </Match>
-  <Match DisplayType="InfoCard">
-    <Place Parts_Common_Body_Edit="Content:1"/>
-    <Place Parts_Common_Title_Edit="Content:2"/>
-    <Place Parts_InfoCard="Content:3;Alternate=InfoCardSummaryAdmin"/>
-  </Match>
-
-  <!--Event-->
-  <Match ContentType="Event">
-    <Place Fields_SmartContentPicker_Edit="Content:1.2;Alternate=SmartContentPicker_Edit_Event_AppPicker"/>
-    <Place Fields_MediaLibraryPicker_Edit-EventSkinFile="-"/>
+  <Match ContentType="HtmlModule">
+    <Place Fields_MediaLibraryPicker="Content:after"/>
+    <Place Fields_MediaLibraryPicker_Edit-HtmlModuleIco="Content:after"/>
+    <Place Fields_MediaLibraryPicker_Edit-HtmlModuleFile="Content:after"/>
   </Match>
 </Placement>

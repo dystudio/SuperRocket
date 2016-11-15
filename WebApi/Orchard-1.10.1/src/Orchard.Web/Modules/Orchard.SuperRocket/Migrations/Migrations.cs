@@ -57,15 +57,15 @@ namespace Orchard.SuperRocket.Migrations
                         .WithSetting("TextFieldSettings.Flavor", "Wide"))
                     .WithField("Author", fieldBuilder => fieldBuilder.OfType("TextField")
                         .WithDisplayName("Module Author")
-                        .WithSetting("TextFieldSettings.Required", "true")
+                        .WithSetting("TextFieldSettings.Required", "false")
                         .WithSetting("TextFieldSettings.Flavor", "Wide"))
                    .WithField("Description", fieldBuilder => fieldBuilder.OfType("TextField")
                         .WithDisplayName("Module Description")
-                        .WithSetting("TextFieldSettings.Required", "true")
+                        .WithSetting("TextFieldSettings.Required", "false")
                         .WithSetting("TextFieldSettings.Flavor", "Wide"))
                    .WithField("Url", fieldBuilder => fieldBuilder.OfType("TextField")
                         .WithDisplayName("Introduction Url")
-                        .WithSetting("TextFieldSettings.Required", "true")
+                        .WithSetting("TextFieldSettings.Required", "false")
                         .WithSetting("TextFieldSettings.Flavor", "Wide"))
                         );
 

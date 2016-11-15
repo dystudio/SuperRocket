@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\SuperRocketController.cs" />
+    <Compile Include="Common\NullToEmptyStringResolver.cs" />
     <Compile Include="Extension\AuthorizeAppApiAttribute.cs" />
     <Compile Include="Extension\AuthorizeAppApiFilter.cs" />
     <Compile Include="Extension\AuthorizeAppAttribute.cs" />
@@ -113,7 +114,9 @@
     <Compile Include="Extension\CustomAuthorizeAttribute.cs" />
     <Compile Include="Extension\HttpRoutes.cs" />
     <Compile Include="Migrations\Migrations.cs" />
+    <Compile Include="Services\HtmlModuleService.cs" />
     <Compile Include="Services\ContentTypesService.cs" />
+    <Compile Include="Services\IHtmlModuleService.cs" />
     <Compile Include="Services\IContentTypesService.cs" />
   </ItemGroup>
   <ItemGroup>

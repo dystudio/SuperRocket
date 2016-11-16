@@ -95,6 +95,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\DownloadService.cs" />
+    <Compile Include="Services\IDownloadService.cs" />
     <Compile Include="Services\ICustomerService.cs" />
     <Compile Include="Interfaces\ILinkGroupService.cs" />
     <Compile Include="CoreModule.cs" />

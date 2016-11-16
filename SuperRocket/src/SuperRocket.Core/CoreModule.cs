@@ -23,7 +23,8 @@ namespace SuperRocket.Core
         public void Initialize()
         {
             var cb = new ContainerBuilder();
-            cb.RegisterType<CustomerService>().As<ICustomerService>();
+            cb.RegisterType<CustomerService>().As<ICustomerService>().InstancePerDependency();
+            cb.RegisterType<DownloadService>().As<IDownloadService>().SingleInstance();
             cb.Update(_container);
         }
     }

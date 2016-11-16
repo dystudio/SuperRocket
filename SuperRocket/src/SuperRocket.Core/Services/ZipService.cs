@@ -4,12 +4,9 @@ using SuperRocket.Core.Model;
 
 namespace SuperRocket.Core.Services
 {
-    public class DownloadService : IDownloadService
+    public class ZipService : IZipService
     {
-        public DownloadService( )
-        {
-        }
-        public void Download(string sourcePath, string destinationPath)
+        public void UnZip(string fileToUnzip, string destinationPath)
         {
             throw new NotImplementedException();
         }

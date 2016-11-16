@@ -24,7 +24,8 @@ namespace SuperRocket.Core
         {
             var cb = new ContainerBuilder();
             cb.RegisterType<CustomerService>().As<ICustomerService>().InstancePerDependency();
-            cb.RegisterType<DownloadService>().As<IDownloadService>().SingleInstance();
+            cb.RegisterType<DownloadService>().As<IDownloadService>().InstancePerDependency();
+            cb.RegisterType<ZipService>().As<IZipService>().InstancePerDependency();
             cb.Update(_container);
         }
     }

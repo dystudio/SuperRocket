@@ -1,7 +1,7 @@
 # Super Rocket
 Super Rocket is a framework for a WPF modular application based on the [Prism Library](https://github.com/PrismLibrary/Prism) and the [Modern UI for WPF (MUI)](https://github.com/firstfloorsoftware/mui) Toolkit. It is a proof of concept for creating metro-styled, modern UI WPF applications in a plugin architecture.
 
-![](https://github.com/AccentureRapid/IDS/blob/master/SuperRocket/SuperRocket.png)
+![](https://github.com/AccentureRapid/SuperRocket/blob/Autofac/SuperRocket/SuperRocket.png)
 
 A little while ago, a colleague of mine told me about a problem he had to solve. A customer asked him to develop a desktop application that presents a different set of features in accordance to which of the enterprise offices is running the software. On the one hand, I remembered how to do that from a past project where I was involved. On the other hand, [there is an open source project](https://github.com/firstfloorsoftware/mui) for creating WPF applications with a modern look & feel, which I am following since a couple of years because I think it's really great.
 
